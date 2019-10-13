@@ -151,3 +151,4 @@ tm() {
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 eval "$(jump shell)"
+eval "$(direnv hook zsh)"

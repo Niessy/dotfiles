@@ -143,9 +143,12 @@ tm() {
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 eval "$(jump shell)"
+eval "$(direnv hook zsh)"
 
 export PATH="/home/domluna/anaconda3/bin:$PATH"
 
 if [ -f "$HOME/.tokens" ]; then
     source $HOME/.tokens
 fi
+
+
