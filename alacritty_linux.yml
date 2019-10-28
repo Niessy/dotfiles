@@ -138,81 +138,62 @@ font:
 # If `true`, bold text is drawn using the bright color variants.
 draw_bold_text_with_bright_colors: true
 
+# Colors
+#
+# black           = '0x222222' 
+# medium_gray     = '0x767676' 
+# white           = '0xF1F1F1' 
+# light_black     = '0x424242' 
+# lighter_black   = '0x545454' 
+# subtle_black    = '0x303030' 
+# light_gray      = '0x999999' 
+# lighter_gray    = '0xCCCCCC' 
+# lightest_gray   = '0xE5E5E5' 
+# dark_red        = '0xC30771' 
+# light_red       = '0xE32791' 
+# dark_blue       = '0x008EC4' 
+# light_blue      = '0xB6D6FD' 
+# dark_cyan       = '0x20A5BA' 
+# light_cyan      = '0x4FB8CC' 
+# dark_green      = '0x10A778' 
+# light_green     = '0x5FD7A7' 
+# dark_purple     = '0x523C79' 
+# light_purple    = '0x6855DE' 
+# light_yellow    = '0xF3E430' 
+# dark_yellow     = '0xA89C14' 
 colors:
-  # One Half Dark
-  # primary:
-  #   background: '0x282c34'
-  #   foreground: '0xdcdfe4'
-  #
-  # normal:
-  #   black: '0x282c34'
-  #   red: '0xe06c75'
-  #   green: '0x98c379'
-  #   yellow: '0xe5c07b'
-  #   blue: '0x61afef'
-  #   magenta: '0xc678dd'
-  #   cyan: '0x56b6c2'
-  #   white: '0xdcdfe4'
-  #
-  # bright:
-  #   black: '0x282c34'
-  #   red: '0xe06c75'
-  #   green: '0x98c379'
-  #   yellow: '0xe5c07b'
-  #   blue: '0x61afef'
-  #   magenta: '0xc678dd'
-  #   cyan: '0x56b6c2'
-  #   white: '0xdcdfe4'
-
-  # Ayu
   primary:
-    background: '0x0A0E14'
-    foreground: '0xB3B1AD'
+    background: '0x222222'
+    foreground: '0xF1F1F1'
 
   normal:
-    black: '0x01060E'
-    red: '0xEA6C73'
-    green: '0x91B362'
-    yellow: '0xF9AF4F'
-    blue: '0x53BDFA'
-    magenta: '0xFAE994'
-    cyan: '0x90E1C6'
-    white: '0xC7C7C7'
+    black: '0x222222'
+    red: '0xE32791'
+    green: '0x5FD7A7'
+    yellow: '0xF3E430'
+    blue: '0xB6D6FD'
+    magenta: '0x6855DE'
+    cyan: '0x4FB8CC'
+    white: '0xF1F1F1'
 
   bright:
-    black: '0x686868'
-    red: '0xF07178'
-    green: '0xC2D94C'
-    yellow: '0xFFB454'
-    blue: '0x59C2FF'
-    magenta: '0xFFEE99'
-    cyan: '0x95E6CB'
-    white: '0xFFFFFF'
+    black: '0x222222'
+    red: '0xE32791'
+    green: '0x5FD7A7'
+    yellow: '0xF3E430'
+    blue: '0xB6D6FD'
+    magenta: '0x6855DE'
+    cyan: '0x4FB8CC'
+    white: '0xF1F1F1'
 
-  # Iceberg
-  # primary:
-  #   background: '0x161821'
-  #   foreground: '0xd2d4de'
-  #
-  # normal:
-  #   black:   '0x161821'
-  #   red:     '0xe27878'
-  #   green:   '0xb4be82'
-  #   yellow:  '0xe2a478'
-  #   blue:    '0x84a0c6'
-  #   magenta: '0xa093c7'
-  #   cyan:    '0x89b8c2'
-  #   white:   '0xc6c8d1'
-  #
-  # bright:
-  #   black:   '0x6b7089'
-  #   red:     '0xe98989'
-  #   green:   '0xc0ca8e'
-  #   yellow:  '0xe9b189'
-  #   blue:    '0x91acd1'
-  #   magenta: '0xada0d3'
-  #   cyan:    '0x95c4ce'
-  #   white:   '0xd2d4de'
+  # black: '0x222222'
+  # white: '0xC7C7C7'
+  # red: '0xC30771'
+  # green: '0x10A778'
+  # yellow: '0xA89C14'
+  # blue: '0x008EC4'
+  # magenta: '0x523C79'
+  # cyan: '0x20A5BA'
 
   # Dim colors
   #

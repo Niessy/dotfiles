@@ -10,10 +10,6 @@ Plug 'godlygeek/tabular'
 
 " Colorscehmes
 Plug 'andreypopp/vim-colors-plain'
-Plug 'nightsense/snow'
-Plug 'rakr/vim-two-firewatch'
-Plug 'ayu-theme/ayu-vim'
-Plug 'cocopon/iceberg.vim'
 
 Plug 'neoclide/coc.nvim', {'tag': '*', 'branch': 'release'}
 
@@ -45,8 +41,7 @@ let g:coc_global_extensions = [
 set termguicolors
 
 set background=dark
-colo ayu
-" colo iceberg
+colo plain
 
 set relativenumber
 
