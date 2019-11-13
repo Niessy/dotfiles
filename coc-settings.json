@@ -2,7 +2,7 @@
   "suggest.echodocSupport": true,
   "suggest.maxCompleteItemCount": 40,
 
-  "coc.preferences.formatOnSaveFiletypes": ["json", "go"],
+  "coc.preferences.formatOnSaveFiletypes": ["go"],
   // "coc.preferences.formatOnSaveFiletypes": ["javascript", "typescript", "typescriptreact", "json", "javascriptreact", "go"],
 
 	"languageserver": {
@@ -20,5 +20,6 @@
       "settings": {},
       "rootPatterns": [".flowconfig"]
     }
-  }
+  },
+  "java.errors.incompleteClasspath.severity": "ignore"
 }
