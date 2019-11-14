@@ -3,6 +3,7 @@
 # remove old files
 rm ~/.config/nvim/init.vim
 rm ~/.config/nvim/coc-settings.json
+rm ~/.config/nvim/lua/*.lua
 rm ~/.tmux.conf
 rm ~/.gitconfig
 rm ~/.bashrc
@@ -31,4 +32,5 @@ ln -s $PWD/tmux.conf ~/.tmux.conf
 ln -s $PWD/gitconfig ~/.gitconfig
 ln -s $PWD/startup.jl ~/.julia/config/startup.jl
 ln -s $PWD/startup_ijulia.jl ~/.julia/config/startup_ijulia.jl
+ln -s $PWD/lua/*.lua ~/.config/nvim/lua/
 

@@ -205,7 +205,7 @@ autocmd CursorHold * silent call CocActionAsync('highlight')
 
 autocmd BufWritePre *.go :call CocAction('runCommand', 'editor.action.organizeImport')
 
-" lua require("navigation")
+lua require("navigation")
 " map the Terminal function in the lua module to some shortcuts
 " nnoremap <silent> <leader>kh :lua Terminal(1)<cr>
 " nnoremap <silent> <leader>kj :lua Terminal(2)<cr>
