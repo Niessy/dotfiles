@@ -14,6 +14,10 @@ rm ~/.julia/config/startup_ijulia.jl
 
 # symlinks
 
+mkdir -p ~/.config/alacritty
+mkdir -p ~/.config/nvim/lua
+mkdir -p ~/.julia/config
+
 if [ "$(uname -s)" == "Darwin" ]
 then
 	echo "On MacOS ..."
