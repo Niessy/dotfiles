@@ -53,6 +53,7 @@ tm() {
 
 eval "$(jump shell)"
 eval "$(direnv hook zsh)"
+eval "$(hub alias -s)"
 
 export PATH="/home/domluna/anaconda3/bin:$PATH"
 

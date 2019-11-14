@@ -18,6 +18,8 @@ Plug 'JuliaEditorSupport/julia-vim'
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
 
+" Plug 'zxqfl/tabnine-vim'
+
 " Plug 'plasticboy/vim-markdown'
 
 call plug#end()
