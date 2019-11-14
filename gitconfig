@@ -10,11 +10,15 @@
 	required = true
 	clean = git-lfs clean -- %f
 [push]
-	default = simple
+	default = current
 [alias]
-	st = status
+	s = status -sb
 	co = checkout
 	unstage = reset HEAD --
 	uncommit = reset --soft HEAD^
+	l = log -8 --graph --oneline --decorate
+	ld = log -8 --graph --pretty=format:'%C(yellow)%h%C(bold white red)%d%Creset %s %C(bold green)%cr %Creset%C(white)%an' --abbrev-commit --date=relative
+	ll = log --stat --decorate --source -p
+	b = branch -vv
 [rerere]
 	enabled = true

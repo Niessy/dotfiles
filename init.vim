@@ -3,6 +3,7 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-easy-align'
 Plug 'tomtom/tcomment_vim'
+Plug 'justinmk/vim-sneak'
 
 Plug 'tpope/vim-fugitive'
 Plug 'junegunn/gv.vim'
@@ -213,3 +214,5 @@ autocmd BufWritePre *.go :call CocAction('runCommand', 'editor.action.organizeIm
 
 " => resize splits when vim is resized
 autocmd VimResized * wincmd =
+
+let g:sneak#label = 1
