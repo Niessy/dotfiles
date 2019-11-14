@@ -18,6 +18,8 @@ Plug 'JuliaEditorSupport/julia-vim'
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
 
+Plug 'norcalli/nvim-colorizer.lua'
+
 " Plug 'zxqfl/tabnine-vim'
 
 " Plug 'plasticboy/vim-markdown'
@@ -46,6 +48,8 @@ set background=dark
 colo plain
 
 set relativenumber
+
+lua require("colorizer")
 
 " Better display for messages
 set cmdheight=2
@@ -103,13 +107,12 @@ map <C-l> <C-W>l
 autocmd! FileType fzf
 autocmd  FileType fzf set laststatus=0 noshowmode noruler
   \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler
-" nnoremap <silent><Leader>f 	:Files<CR>
 nnoremap <silent><C-p> :Files<CR>
 nnoremap <silent><Leader>b :Buffers<CR>
 nnoremap <silent><Leader>l :Lines<CR>
-nnoremap <silent><Leader>` :Marks<CR>
+nnoremap <silent><Leader>h :nohlsearch<CR>
 
-let g:fzf_layout = { 'down': '~30%' }
+let g:fzf_layout = { 'down': '~40%' }
 " let g:fzf_layout = { 'window': 'enew' }
 " let g:fzf_layout = { 'window': '-tabnew' }
 " let g:fzf_layout = { 'window': '20split enew' }
@@ -176,10 +179,10 @@ endif
 set autoread
 au FocusGained * silent! :checktime
 
-nmap <silent> <leader>d <Plug>(coc-definition)
-nmap <silent> <leader>t <Plug>(coc-type-definition)
-nmap <silent> <leader>i <Plug>(coc-implementation)
-nmap <silent> <leader>f <Plug>(coc-references)
+nmap <silent> <Leader>d <Plug>(coc-definition)
+nmap <silent> <Leader>t <Plug>(coc-type-definition)
+" nmap <silent> <Leader>i <Plug>(coc-implementation)
+nmap <silent> <Leader>f <Plug>(coc-references)
 
 " Remap for rename current word
 nmap <leader>lr <Plug>(coc-rename)
@@ -200,3 +203,13 @@ endfunction
 autocmd CursorHold * silent call CocActionAsync('highlight')
 
 autocmd BufWritePre *.go :call CocAction('runCommand', 'editor.action.organizeImport')
+
+" lua require("navigation")
+" map the Terminal function in the lua module to some shortcuts
+" nnoremap <silent> <leader>kh :lua Terminal(1)<cr>
+" nnoremap <silent> <leader>kj :lua Terminal(2)<cr>
+" nnoremap <silent> <leader>kk :lua Terminal(3)<cr>
+" nnoremap <silent> <leader>kl :lua Terminal(4)<cr>
+
+" => resize splits when vim is resized
+autocmd VimResized * wincmd =

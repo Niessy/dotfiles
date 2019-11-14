@@ -36,7 +36,7 @@ alias ga='git add'
 alias gc='git commit'
 alias md='mkdir -p'
 
-export FZF_DEFAULT_OPTS="--inline-info"
+export FZF_DEFAULT_OPTS='--height 96% --reverse --inline-info --preview "cat {}"'
 export FZF_DEFAULT_COMMAND="fd --type f --hidden --follow --exclude '{.git,node_modules,vendor}/'"
 
 bindkey -s '\C-p' 'nvim $(fzf)\n'

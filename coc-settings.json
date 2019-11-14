@@ -21,5 +21,12 @@
       "rootPatterns": [".flowconfig"]
     }
   },
-  "java.errors.incompleteClasspath.severity": "ignore"
+  "java.errors.incompleteClasspath.severity": "ignore",
+
+  "diagnostic.enableMessage": "always",
+  "diagnostic.errorSign": "X",
+  "diagnostic.hintSign": ">>",
+  "diagnostic.infoSign": ">>",
+  "diagnostic.warningSign": "⚠",
+  "signature.hideOnTextChange": true
 }
