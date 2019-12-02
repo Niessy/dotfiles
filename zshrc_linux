@@ -16,8 +16,6 @@ export INFOPATH="/home/linuxbrew/.linuxbrew/share/info:$INFOPATH"
 export PATH="$PATH:$HOME/julia/usr/bin"
 export PATH="$PATH:/usr/local/cuda/bin"
 export PATH="$PATH:$HOME/.fzf/bin"
-# Swift tensorflow
-export PATH=$HOME/swiftTF/bin:"${PATH}"
 
 export EDITOR=nvim
 
