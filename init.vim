@@ -161,6 +161,9 @@ autocmd Filetype vimscript setlocal ts=4 sw=4 sts=0 expandtab
 autocmd Filetype json setlocal ts=2 sw=2 sts=0 expandtab
 autocmd Filetype vimscript setlocal ts=4 sw=4 sts=0 expandtab
 autocmd Filetype yaml setlocal ts=2 sw=2 sts=0 expandtab
+autocmd Filetype css setlocal ts=2 sw=2 sts=0 expandtab
+autocmd Filetype scss setlocal ts=2 sw=2 sts=0 expandtab
+autocmd Filetype sql setlocal ts=2 sw=2 sts=0 expandtab
 
 if has('persistent_undo')
     " define a path to store persistent undo files.

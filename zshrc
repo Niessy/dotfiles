@@ -17,8 +17,6 @@ export PATH=$PATH:$HOME/julia/usr/bin
 export PATH=$PATH:$HOME/.gem/ruby/2.3.0/bin
 export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin
 
-export GOPATH=$HOME/ocean/backend:$GOPATH
-
 export EDITOR=nvim
 
 alias j1='julia'
@@ -60,3 +58,5 @@ export PATH=$PATH:$ANDROID_SDK/emulator
 export PATH=$PATH:$ANDROID_SDK/tools
 export PATH=$PATH:$ANDROID_SDK/tools/bin
 export PATH=$PATH:$ANDROID_SDK/platform-tools
+
+export GO111MODULE=on
