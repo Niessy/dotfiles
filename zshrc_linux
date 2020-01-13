@@ -59,4 +59,8 @@ if [ -f "$HOME/.tokens" ]; then
     source $HOME/.tokens
 fi
 
+export LD_LIBRARY_PATH=/usr/local/cuda/targets/x86_64-linux/lib
+
+export JULIA_REVISE_INCLUDE=1
+
 

@@ -13,6 +13,7 @@ Plug 'godlygeek/tabular'
 Plug 'andreypopp/vim-colors-plain'
 
 Plug 'neoclide/coc.nvim', {'tag': '*', 'branch': 'release'}
+Plug 'neovim/nvim-lsp'
 
 Plug 'uarun/vim-protobuf'
 Plug 'JuliaEditorSupport/julia-vim'
@@ -24,6 +25,7 @@ Plug 'norcalli/nvim-colorizer.lua'
 " Plug 'zxqfl/tabnine-vim'
 
 " Plug 'plasticboy/vim-markdown'
+
 
 call plug#end()
 
