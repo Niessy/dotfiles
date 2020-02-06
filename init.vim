@@ -3,7 +3,6 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-easy-align'
 Plug 'tomtom/tcomment_vim'
-" Plug 'justinmk/vim-sneak'
 
 Plug 'tpope/vim-fugitive'
 Plug 'junegunn/gv.vim'
@@ -24,7 +23,6 @@ Plug 'mxw/vim-jsx'
 
 Plug 'norcalli/nvim-colorizer.lua'
 
-" Plug 'zxqfl/tabnine-vim'
 " Plug 'plasticboy/vim-markdown'
 
 call plug#end()
@@ -195,5 +193,3 @@ lua require("navigation")
 
 " => resize splits when vim is resized
 autocmd VimResized * wincmd =
-
-" let g:sneak#label = 1
