@@ -39,7 +39,7 @@ lua require("colorizer")
 "
 " LSP
 "
-lua require("nvim_lsp").rust_analyzer.setup{}
+lua require'nvim_lsp'.rust_analyzer.setup{}
 " lua require'nvim_lsp'.pyls.setup{}
 " lua require'nvim_lsp'.pyls_ms.setup{}
 autocmd Filetype rust setlocal omnifunc=v:lua.vim.lsp.omnifunc
@@ -50,7 +50,8 @@ call deoplete#custom#source('_', 'max_menu_width', 80)
 " disable preview window
 set completeopt-=preview
 
-let g:ale_fixers = { 'python': ['black'], 'javascript': ['prettier'], 'c': ['clang-format'], 'go': ['goimports'], 'rust': ['rustfmt'] }
+let g:ale_linters = { 'python': ['flake8', 'mypy', 'pyre'] }
+let g:ale_fixers = { 'python': ['black', 'isort'], 'javascript': ['prettier'], 'c': ['clang-format'], 'go': ['goimports'], 'rust': ['rustfmt'] }
 let g:ale_fix_on_save = 1
 let g:ale_hover_to_preview = 1
 
