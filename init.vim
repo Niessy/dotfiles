@@ -3,7 +3,6 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-easy-align'
 Plug 'tomtom/tcomment_vim'
-" Plug 'justinmk/vim-sneak'
 
 Plug 'tpope/vim-fugitive'
 Plug 'junegunn/gv.vim'
@@ -24,7 +23,6 @@ Plug 'mxw/vim-jsx'
 
 Plug 'norcalli/nvim-colorizer.lua'
 
-" Plug 'zxqfl/tabnine-vim'
 " Plug 'plasticboy/vim-markdown'
 
 call plug#end()
@@ -45,7 +43,6 @@ lua require("nvim_lsp").rust_analyzer.setup{}
 " lua require'nvim_lsp'.pyls.setup{}
 " lua require'nvim_lsp'.pyls_ms.setup{}
 autocmd Filetype rust setlocal omnifunc=v:lua.vim.lsp.omnifunc
-" autocmd Filetype python setlocal omnifunc=v:lua.vim.lsp.omnifunc
 
 let g:deoplete#enable_at_startup = 1
 call deoplete#custom#source('_', 'max_menu_width', 80)
@@ -169,6 +166,9 @@ autocmd Filetype vimscript setlocal ts=4 sw=4 sts=0 expandtab
 autocmd Filetype json setlocal ts=2 sw=2 sts=0 expandtab
 autocmd Filetype vimscript setlocal ts=4 sw=4 sts=0 expandtab
 autocmd Filetype yaml setlocal ts=2 sw=2 sts=0 expandtab
+autocmd Filetype css setlocal ts=2 sw=2 sts=0 expandtab
+autocmd Filetype scss setlocal ts=2 sw=2 sts=0 expandtab
+autocmd Filetype sql setlocal ts=2 sw=2 sts=0 expandtab
 
 if has('persistent_undo')
 	" define a path to store persistent undo files.
@@ -197,5 +197,3 @@ lua require("navigation")
 
 " => resize splits when vim is resized
 autocmd VimResized * wincmd =
-
-" let g:sneak#label = 1
