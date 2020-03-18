@@ -41,16 +41,21 @@ lua require("colorizer")
 "
 " LSP
 "
-" lua require("nvim_lsp").rust_analyzer.setup{}
-lua require'nvim_lsp'.pyls.setup{}
-" autocmd Filetype rust setlocal omnifunc=v:lua.vim.lsp.omnifunc
-autocmd Filetype python setlocal omnifunc=v:lua.vim.lsp.omnifunc
+lua require("nvim_lsp").rust_analyzer.setup{}
+" lua require'nvim_lsp'.pyls.setup{}
+" lua require'nvim_lsp'.pyls_ms.setup{}
+autocmd Filetype rust setlocal omnifunc=v:lua.vim.lsp.omnifunc
+" autocmd Filetype python setlocal omnifunc=v:lua.vim.lsp.omnifunc
 
 let g:deoplete#enable_at_startup = 1
 call deoplete#custom#source('_', 'max_menu_width', 80)
 
 " disable preview window
 set completeopt-=preview
+
+let g:autoformat_autoindent = 0
+let g:autoformat_retab = 0
+" let g:autoformat_remove_trailing_spaces = 0
 
 let g:formatters_python = ['black']
 autocmd BufWrite * :Autoformat

@@ -33,6 +33,7 @@ alias gst='git status'
 alias ga='git add'
 alias gc='git commit'
 alias md='mkdir -p'
+alias py='ipython'
 
 export FZF_DEFAULT_OPTS='--height 96% --reverse --inline-info --preview "cat {}"'
 export FZF_DEFAULT_COMMAND="fd --type f --hidden --follow --exclude '{.git,node_modules,vendor}/'"
