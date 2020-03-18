@@ -14,7 +14,7 @@ Plug 'andreypopp/vim-colors-plain'
 Plug 'neovim/nvim-lsp'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'Shougo/deoplete-lsp'
-Plug 'Chiel92/vim-autoformat'
+Plug 'dense-analysis/ale'
 
 Plug 'uarun/vim-protobuf'
 Plug 'JuliaEditorSupport/julia-vim'
@@ -50,12 +50,9 @@ call deoplete#custom#source('_', 'max_menu_width', 80)
 " disable preview window
 set completeopt-=preview
 
-let g:autoformat_autoindent = 0
-let g:autoformat_retab = 0
-" let g:autoformat_remove_trailing_spaces = 0
-
-let g:formatters_python = ['black']
-autocmd BufWrite * :Autoformat
+let g:ale_fixers = { 'python': ['black'], 'javascript': ['prettier'], 'c': ['clang-format'], 'go': ['goimports'], 'rust': ['rustfmt'] }
+let g:ale_fix_on_save = 1
+let g:ale_hover_to_preview = 1
 
 
 " Better display for messages
@@ -139,7 +136,7 @@ let g:fzf_colors =
 			\ 'spinner': ['fg', 'Label'],
 			\ 'header':  ['fg', 'Comment'] }
 
-let g:rg_command = 'rg -i --column --line-number --fixed-strings --no-ignore -g "!{.git,node_modules,vendor}/*" '
+let g:rg_command = 'rg -i --column --line-number --fixed-strings --no-ignore -g "!{.git,.mypy_cache,node_modules,vendor}/*" '
 
 map <silent><Leader>c :TComment<CR>
 map <silent><Leader>r :Rg<CR>
