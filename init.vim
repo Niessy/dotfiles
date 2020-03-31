@@ -40,6 +40,7 @@ lua require("colorizer")
 " LSP
 "
 lua require'nvim_lsp'.rust_analyzer.setup{}
+" lua require'nvim_lsp'.rls.setup{}
 " lua require'nvim_lsp'.pyls.setup{}
 " lua require'nvim_lsp'.pyls_ms.setup{}
 autocmd Filetype rust setlocal omnifunc=v:lua.vim.lsp.omnifunc
