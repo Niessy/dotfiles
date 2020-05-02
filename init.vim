@@ -1,4 +1,7 @@
 call plug#begin('~/.local/share/nvim/plugged')
+
+Plug 'sheerun/vim-polyglot'
+
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-easy-align'
@@ -18,23 +21,38 @@ Plug 'dense-analysis/ale'
 
 Plug 'uarun/vim-protobuf'
 Plug 'JuliaEditorSupport/julia-vim'
-Plug 'pangloss/vim-javascript'
-Plug 'mxw/vim-jsx'
+" Plug 'pangloss/vim-javascript'
+" Plug 'mxw/vim-jsx'
 
 Plug 'norcalli/nvim-colorizer.lua'
+Plug 'junegunn/rainbow_parentheses.vim'
 
+Plug 'kdheepak/JuliaFormatter.vim'
 " Plug 'plasticboy/vim-markdown'
+"
+Plug 'airblade/vim-rooter'
 
 call plug#end()
 
-set termguicolors
+" Automatically install missing plugins on startup
+autocmd VimEnter *
+  \  if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
+  \|   PlugInstall --sync | q
+  \| endif
 
+lua require("colorizer")
+
+let g:rainbow#max_level = 16
+let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['{', '}']]
+
+set termguicolors
 set background=dark
 colo plain
 
-set relativenumber
 
-lua require("colorizer")
+autocmd FileType * RainbowParentheses
+
+set relativenumber
 
 "
 " LSP
@@ -61,6 +79,7 @@ let g:ale_hover_to_preview = 1
 set cmdheight=2
 " Smaller updatetime for CursorHold & CursorHoldI
 set updatetime=300
+set timeoutlen=100
 " don't give |ins-completion-menu| messages.
 set shortmess+=c
 " always show signcolumns
@@ -108,6 +127,10 @@ map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
 
+"
+" FZF
+"
+
 " Hide statusline of terminal buffer
 autocmd! FileType fzf
 autocmd  FileType fzf set laststatus=0 noshowmode noruler
@@ -117,31 +140,44 @@ nnoremap <silent><Leader>b :Buffers<CR>
 nnoremap <silent><Leader>l :Lines<CR>
 nnoremap <silent><Leader>h :nohlsearch<CR>
 
-let g:fzf_layout = { 'down': '~40%' }
+" let g:fzf_layout = { 'down': '~40%' }
+let g:fzf_layout = {'up':'~90%', 'window': { 'width': 0.8, 'height': 0.8,'yoffset':0.5,'xoffset': 0.5, 'highlight': 'Todo', 'border': 'sharp' } }
 " let g:fzf_layout = { 'window': 'enew' }
 " let g:fzf_layout = { 'window': '-tabnew' }
 " let g:fzf_layout = { 'window': '20split enew' }
 
 " Customize fzf colors to match your color scheme
 let g:fzf_colors =
-			\ { 'fg':      ['fg', 'Normal'],
-			\ 'bg':      ['bg', 'Normal'],
-			\ 'hl':      ['fg', 'Comment'],
-			\ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
-			\ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
-			\ 'hl+':     ['fg', 'Statement'],
-			\ 'info':    ['fg', 'PreProc'],
-			\ 'border':  ['fg', 'Ignore'],
-			\ 'prompt':  ['fg', 'Conditional'],
-			\ 'pointer': ['fg', 'Exception'],
-			\ 'marker':  ['fg', 'Keyword'],
-			\ 'spinner': ['fg', 'Label'],
-			\ 'header':  ['fg', 'Comment'] }
+\ { 'fg':      ['fg', 'Normal'],
+  \ 'bg':      ['bg', 'Normal'],
+  \ 'hl':      ['fg', 'Comment'],
+  \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+  \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
+  \ 'hl+':     ['fg', 'Statement'],
+  \ 'info':    ['fg', 'PreProc'],
+  \ 'border':  ['fg', 'Ignore'],
+  \ 'prompt':  ['fg', 'Conditional'],
+  \ 'pointer': ['fg', 'Exception'],
+  \ 'marker':  ['fg', 'Keyword'],
+  \ 'spinner': ['fg', 'Label'],
+  \ 'header':  ['fg', 'Comment'] }
 
-let g:rg_command = 'rg -i --column --line-number --fixed-strings --no-ignore -g "!{.git,.mypy_cache,node_modules,vendor}/*" '
+"Get Files
+" command! -bang -nargs=? -complete=dir Files
+"     \ call fzf#vim#files(<q-args>, fzf#vim#with_preview({'options': ['--layout=reverse', '--info=inline']}), <bang>0)
 
-map <silent><Leader>c :TComment<CR>
+" .git,.mypy_cache,node_modules,vendor
+
+" Get text in files with Rg
+command! -bang -nargs=* Rg
+  \ call fzf#vim#grep(
+  \   'rg --column --line-number --no-heading --color=always --smart-case '.shellescape(<q-args>), 1,
+  \   fzf#vim#with_preview(), <bang>0)
+
 map <silent><Leader>r :Rg<CR>
+
+" comment
+map <silent><Leader>c :TComment<CR>
 
 " Moving inside tmux/vim
 function! TmuxMove(direction)
@@ -196,3 +232,7 @@ lua require("navigation")
 
 " => resize splits when vim is resized
 autocmd VimResized * wincmd =
+
+" auto source when writing to init.vm alternatively you can run :source $MYVIMRC
+au! BufWritePost $MYVIMRC source %      
+
