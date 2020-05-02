@@ -17,8 +17,7 @@ Plug 'andreypopp/vim-colors-plain'
 " Plug 'neovim/nvim-lsp'
 " Plug 'Shougo/deoplete-lsp'
 " Plug 'dense-analysis/ale'
-
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+" Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
 Plug 'uarun/vim-protobuf'
 Plug 'JuliaEditorSupport/julia-vim'
@@ -66,8 +65,8 @@ set relativenumber
 " lua require'nvim_lsp'.pyls_ms.setup{}
 " autocmd Filetype rust setlocal omnifunc=v:lua.vim.lsp.omnifunc
 
-let g:deoplete#enable_at_startup = 1
-call deoplete#custom#source('_', 'max_menu_width', 80)
+" let g:deoplete#enable_at_startup = 1
+" call deoplete#custom#source('_', 'max_menu_width', 80)
 
 " disable preview window
 set completeopt-=preview
@@ -138,10 +137,6 @@ map <C-l> <C-W>l
 autocmd! FileType fzf
 autocmd  FileType fzf set laststatus=0 noshowmode noruler
 			\| autocmd BufLeave <buffer> set laststatus=2 showmode ruler
-nnoremap <silent><C-p> :Files<CR>
-nnoremap <silent><Leader>b :Buffers<CR>
-nnoremap <silent><Leader>l :Lines<CR>
-nnoremap <silent><Leader>h :nohlsearch<CR>
 
 " let g:fzf_layout = { 'down': '~40%' }
 let g:fzf_layout = {'up':'~90%', 'window': { 'width': 0.8, 'height': 0.8,'yoffset':0.5,'xoffset': 0.5, 'highlight': 'Todo', 'border': 'sharp' } }
@@ -177,6 +172,10 @@ command! -bang -nargs=* Rg
   \   'rg --column --line-number --no-heading --color=always --smart-case '.shellescape(<q-args>), 1,
   \   fzf#vim#with_preview(), <bang>0)
 
+nnoremap <silent><C-p> :Files<CR>
+nnoremap <silent><Leader>b :Buffers<CR>
+nnoremap <silent><Leader>l :Lines<CR>
+nnoremap <silent><Leader>h :nohlsearch<CR>
 map <silent><Leader>r :Rg<CR>
 
 " comment

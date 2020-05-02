@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # remove old files
-rm -rf ~/.config/nvim/
+rm -rf $HOME/.config/nvim/
 rm ~/.tmux.conf
 rm ~/.gitconfig
 rm ~/.bashrc
