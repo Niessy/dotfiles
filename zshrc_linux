@@ -63,4 +63,11 @@ export LD_LIBRARY_PATH=/usr/local/cuda/targets/x86_64-linux/lib
 
 export JULIA_REVISE_INCLUDE=1
 
+export DUMP1=/media/domluna/c2ad5753-ddfb-460f-af6d-c708af9b0874
+# /mnt/c2ad5753-ddfb-460f-af6d-c708af9b0874
+#
 
+# ln -s /mnt/c2ad5753-ddfb-460f-af6d-c708af9b0874 $HOME/mount1
+
+
+export PKG_CONFIG_PATH=/usr/lib/x86_64-linux-gnu/pkgconfig:/usr/share/pkgconfig:$PKG_CONFIG_PATH
