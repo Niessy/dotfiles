@@ -14,10 +14,11 @@ Plug 'godlygeek/tabular'
 " Colorscehmes
 Plug 'andreypopp/vim-colors-plain'
 
-Plug 'neovim/nvim-lsp'
+" Plug 'neovim/nvim-lsp'
+" Plug 'Shougo/deoplete-lsp'
+" Plug 'dense-analysis/ale'
+
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'Shougo/deoplete-lsp'
-Plug 'dense-analysis/ale'
 
 Plug 'uarun/vim-protobuf'
 Plug 'JuliaEditorSupport/julia-vim'
@@ -31,6 +32,9 @@ Plug 'kdheepak/JuliaFormatter.vim'
 " Plug 'plasticboy/vim-markdown'
 "
 Plug 'airblade/vim-rooter'
+
+
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 call plug#end()
 
@@ -57,11 +61,10 @@ set relativenumber
 "
 " LSP
 "
-lua require'nvim_lsp'.rust_analyzer.setup{}
-" lua require'nvim_lsp'.rls.setup{}
+" lua require'e'nvim_lsp'.rls.setup{}
 " lua require'nvim_lsp'.pyls.setup{}
 " lua require'nvim_lsp'.pyls_ms.setup{}
-autocmd Filetype rust setlocal omnifunc=v:lua.vim.lsp.omnifunc
+" autocmd Filetype rust setlocal omnifunc=v:lua.vim.lsp.omnifunc
 
 let g:deoplete#enable_at_startup = 1
 call deoplete#custom#source('_', 'max_menu_width', 80)
@@ -69,10 +72,10 @@ call deoplete#custom#source('_', 'max_menu_width', 80)
 " disable preview window
 set completeopt-=preview
 
-let g:ale_linters = { 'python': ['flake8', 'mypy', 'pyre'], 'go': ['gopls'] }
-let g:ale_fixers = { 'python': ['black', 'isort'], 'javascript': ['prettier'], 'c': ['clang-format'], 'go': ['goimports'], 'rust': ['rustfmt'] }
-let g:ale_fix_on_save = 1
-let g:ale_hover_to_preview = 1
+" let g:ale_linters = { 'python': ['flake8', 'mypy', 'pyre'], 'go': ['gopls'] }
+" let g:ale_fixers = { 'python': ['black', 'isort'], 'javascript': ['prettier'], 'c': ['clang-format'], 'go': ['goimports'], 'rust': ['rustfmt'] }
+" let g:ale_fix_on_save = 1
+" let g:ale_hover_to_preview = 1
 
 
 " Better display for messages

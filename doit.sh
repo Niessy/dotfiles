@@ -1,9 +1,7 @@
 #!/usr/bin/env bash
 
 # remove old files
-rm ~/.config/nvim/init.vim
-rm ~/.config/nvim/coc-settings.json
-rm ~/.config/nvim/lua/*.lua
+rm -rf ~/.config/nvim/
 rm ~/.tmux.conf
 rm ~/.gitconfig
 rm ~/.bashrc
@@ -15,7 +13,7 @@ rm ~/.julia/config/startup_ijulia.jl
 # symlinks
 
 mkdir -p ~/.config/alacritty
-mkdir -p ~/.config/nvim/lua
+mkdir -p ~/.config/nvim/{lua,vim}
 mkdir -p ~/.julia/config
 
 if [ "$(uname -s)" == "Darwin" ]
@@ -37,4 +35,5 @@ ln -s $PWD/gitconfig ~/.gitconfig
 ln -s $PWD/startup.jl ~/.julia/config/startup.jl
 ln -s $PWD/startup_ijulia.jl ~/.julia/config/startup_ijulia.jl
 ln -s $PWD/lua/*.lua ~/.config/nvim/lua/
+ln -s $PWD/vim/* ~/.config/nvim/vim/
 
