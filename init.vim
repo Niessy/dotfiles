@@ -81,7 +81,7 @@ set completeopt-=preview
 set cmdheight=2
 " Smaller updatetime for CursorHold & CursorHoldI
 set updatetime=300
-set timeoutlen=100
+" set timeoutlen=100
 " don't give |ins-completion-menu| messages.
 set shortmess+=c
 " always show signcolumns
