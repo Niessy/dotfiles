@@ -43,16 +43,19 @@ autocmd VimEnter *
   \|   PlugInstall --sync | q
   \| endif
 
+" checks if your terminal has 24-bit color support
+if (has("termguicolors"))
+    set termguicolors
+    hi LineNr ctermbg=NONE guibg=NONE
+endif
+
+" set background=dark
+colo plain
+
 lua require("colorizer")
 
 let g:rainbow#max_level = 16
 let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['{', '}']]
-
-set termguicolors
-set background=dark
-colo plain
-
-
 autocmd FileType * RainbowParentheses
 
 set relativenumber
