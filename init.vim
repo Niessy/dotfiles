@@ -32,8 +32,9 @@ Plug 'kdheepak/JuliaFormatter.vim'
 "
 Plug 'airblade/vim-rooter'
 
-
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+Plug 'justinmk/vim-sneak'
 
 call plug#end()
 
@@ -43,20 +44,22 @@ autocmd VimEnter *
   \|   PlugInstall --sync | q
   \| endif
 
-" checks if your terminal has 24-bit color support
-if (has("termguicolors"))
-    set termguicolors
-    hi LineNr ctermbg=NONE guibg=NONE
-endif
 
 " set background=dark
 colo plain
 
-lua require("colorizer")
+" checks if your terminal has 24-bit color support
+if (has("termguicolors"))
+    set termguicolors
+    " hi LineNr ctermbg=NONE guibg=NONE
+endif
+
 
 let g:rainbow#max_level = 16
 let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['{', '}']]
 autocmd FileType * RainbowParentheses
+
+lua require'colorizer'.setup()
 
 set relativenumber
 
@@ -241,3 +244,27 @@ autocmd VimResized * wincmd =
 " auto source when writing to init.vm alternatively you can run :source $MYVIMRC
 au! BufWritePost $MYVIMRC source %      
 
+let g:sneak#label = 1
+" smartcase
+let g:sneak#use_ic_scs = 1
+
+" immediately move tot the next instance of search, if you move the cursor sneak is back to default behavior
+let g:sneak#s_next = 1
+
+" remap so I can use , and ; with f and t
+map gS <Plug>Sneak_,
+map gs <Plug>Sneak_;
+
+" Change the sneak colors
+highlight Sneak guifg=black guibg=#02C7DF ctermfg=black ctermbg=cyan
+highlight SneakScope guifg=red guibg=yellow ctermfg=red ctermbg=yellow
+
+" " Cool prompts
+" let g:sneak#prompt = '🕵'
+" let g:sneak#prompt = '🔎'
+"
+" " I like quickscope better for this since it keeps me in the scope of a single line
+" map f <Plug>Sneak_f
+" map F <Plug>Sneak_F
+" map t <Plug>Sneak_t
+" map T <Plug>Sneak_T
