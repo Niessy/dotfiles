@@ -14,15 +14,13 @@ Plug 'godlygeek/tabular'
 " Colorscehmes
 Plug 'andreypopp/vim-colors-plain'
 
-" Plug 'neovim/nvim-lsp'
-" Plug 'Shougo/deoplete-lsp'
-" Plug 'dense-analysis/ale'
-" Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'neovim/nvim-lsp'
+Plug 'Shougo/deoplete-lsp'
+Plug 'dense-analysis/ale'
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
 Plug 'uarun/vim-protobuf'
 Plug 'JuliaEditorSupport/julia-vim'
-" Plug 'pangloss/vim-javascript'
-" Plug 'mxw/vim-jsx'
 
 Plug 'norcalli/nvim-colorizer.lua'
 Plug 'junegunn/rainbow_parentheses.vim'
@@ -32,9 +30,10 @@ Plug 'kdheepak/JuliaFormatter.vim'
 "
 Plug 'airblade/vim-rooter'
 
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-
 Plug 'justinmk/vim-sneak'
+
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 
 call plug#end()
 
@@ -50,8 +49,8 @@ colo plain
 
 " checks if your terminal has 24-bit color support
 if (has("termguicolors"))
-    set termguicolors
-    " hi LineNr ctermbg=NONE guibg=NONE
+  set termguicolors
+  " hi LineNr ctermbg=NONE guibg=NONE
 endif
 
 
@@ -61,26 +60,30 @@ autocmd FileType * RainbowParentheses
 
 lua require'colorizer'.setup()
 
+let g:airline_theme='minimalist'
+
 set relativenumber
 
 "
 " LSP
 "
+" lua require'nvim_lsp'.gopls.setup{}
 " lua require'e'nvim_lsp'.rls.setup{}
 " lua require'nvim_lsp'.pyls.setup{}
 " lua require'nvim_lsp'.pyls_ms.setup{}
 " autocmd Filetype rust setlocal omnifunc=v:lua.vim.lsp.omnifunc
 
-" let g:deoplete#enable_at_startup = 1
-" call deoplete#custom#source('_', 'max_menu_width', 80)
+let g:deoplete#enable_at_startup = 1
+call deoplete#custom#source('_', 'max_menu_width', 80)
 
 " disable preview window
 set completeopt-=preview
 
-" let g:ale_linters = { 'python': ['flake8', 'mypy', 'pyre'], 'go': ['gopls'] }
+let g:ale_linters = { 'python': ['flake8', 'mypy', 'pyre'], 'go': ['gopls'] }
 " let g:ale_fixers = { 'python': ['black', 'isort'], 'javascript': ['prettier'], 'c': ['clang-format'], 'go': ['goimports'], 'rust': ['rustfmt'] }
-" let g:ale_fix_on_save = 1
-" let g:ale_hover_to_preview = 1
+let g:ale_fixers = { 'python': ['black', 'isort'], 'c': ['clang-format'], 'go': ['goimports'], 'rust': ['rustfmt'] }
+let g:ale_fix_on_save = 1
+let g:ale_hover_to_preview = 1
 
 
 " Better display for messages
@@ -145,7 +148,7 @@ autocmd  FileType fzf set laststatus=0 noshowmode noruler
 			\| autocmd BufLeave <buffer> set laststatus=2 showmode ruler
 
 " let g:fzf_layout = { 'down': '~40%' }
-let g:fzf_layout = {'up':'~90%', 'window': { 'width': 0.8, 'height': 0.8, 'yoffset':0.5, 'xoffset': 0.5, 'border': 'sharp' } }
+let g:fzf_layout = {'up':'~90%', 'window': { 'width': 0.85, 'height': 0.85, 'yoffset':0.5, 'xoffset': 0.5, 'border': 'sharp' } }
 " let g:fzf_layout = { 'window': 'enew' }
 " let g:fzf_layout = { 'window': '-tabnew' }
 " let g:fzf_layout = { 'window': '20split enew' }
@@ -189,12 +192,12 @@ map <silent><Leader>c :TComment<CR>
 
 " Moving inside tmux/vim
 function! TmuxMove(direction)
-	let wnr = winnr()
-	silent! execute 'wincmd ' . a:direction
-	" If the winnr is still the same after we moved, it is the last pane
-	if wnr == winnr()
-		call system('tmux select-pane -' . tr(a:direction, 'phjkl', 'lLDUR'))
-	end
+  let wnr = winnr()
+  silent! execute 'wincmd ' . a:direction
+  " If the winnr is still the same after we moved, it is the last pane
+  if wnr == winnr()
+    call system('tmux select-pane -' . tr(a:direction, 'phjkl', 'lLDUR'))
+  end
 endfunction
 nnoremap <silent> <c-h> :call TmuxMove('h')<cr>
 nnoremap <silent> <c-j> :call TmuxMove('j')<cr>
@@ -214,17 +217,17 @@ autocmd Filetype scss setlocal ts=2 sw=2 sts=0 expandtab
 autocmd Filetype sql setlocal ts=2 sw=2 sts=0 expandtab
 
 if has('persistent_undo')
-	" define a path to store persistent undo files.
-	let target_path = expand('~/.config/nvim/undo/')
-	" create the directory and any parent directories
-	" if the location does not exist.
-	if !isdirectory(target_path)
-		call system('mkdir -p ' . target_path)
-	endif
-	" point Vim to the defined undo directory.
-	let &undodir = target_path
-	" finally, enable undo persistence.
-	set undofile
+  " define a path to store persistent undo files.
+  let target_path = expand('~/.config/nvim/undo/')
+  " create the directory and any parent directories
+  " if the location does not exist.
+  if !isdirectory(target_path)
+    call system('mkdir -p ' . target_path)
+  endif
+  " point Vim to the defined undo directory.
+  let &undodir = target_path
+  " finally, enable undo persistence.
+  set undofile
 endif
 
 " reload file if it has changed on disk
@@ -268,3 +271,9 @@ highlight SneakScope guifg=red guibg=yellow ctermfg=red ctermbg=yellow
 " map F <Plug>Sneak_F
 " map t <Plug>Sneak_t
 " map T <Plug>Sneak_T
+"
+
+
+
+
+
