@@ -1,11 +1,9 @@
 autoload bashcompinit
 bashcompinit
-
 export ZSH="/home/domluna/.oh-my-zsh"
-
 ZSH_THEME="robbyrussell"
 
-plugins=(git)
+plugins=(git tmux fd)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -77,4 +75,3 @@ export GO111MODULE=on
 export PATH="/home/domluna/go/bin:$PATH"
 
 export PATH="/home/domluna/.deno/bin:$PATH"
-

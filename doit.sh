@@ -2,6 +2,7 @@
 
 # remove old files
 rm -rf $HOME/.config/nvim/
+rm -rf $HOME/.config/starship.toml
 rm ~/.tmux.conf
 rm ~/.gitconfig
 rm ~/.bashrc
@@ -36,4 +37,4 @@ ln -s $PWD/startup.jl ~/.julia/config/startup.jl
 ln -s $PWD/startup_ijulia.jl ~/.julia/config/startup_ijulia.jl
 ln -s $PWD/lua/*.lua ~/.config/nvim/lua/
 ln -s $PWD/vim/* ~/.config/nvim/vim/
-
+ln -s $PWD/starship.toml ~/.config/starship.toml

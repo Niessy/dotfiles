@@ -44,7 +44,8 @@ autocmd VimEnter *
   \| endif
 
 
-" set background=dark
+set background=dark
+" set background=light
 colo plain
 
 " checks if your terminal has 24-bit color support

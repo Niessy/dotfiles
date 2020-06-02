@@ -94,14 +94,17 @@ font:
 
   # Normal (roman) font face
   normal:
+    # family: Iosevka Slab
     family: Hack Nerd Font
     style: Regular
 
   bold:
+    # family: Iosevka Slab
     family: Hack Nerd Font
     style: Bold
 
   italic:
+    # family: Iosevka Slab
     family: Hack Nerd Font
     style: Italic
 
@@ -150,21 +153,25 @@ draw_bold_text_with_bright_colors: true
 # lighter_gray    = '0xCCCCCC' 
 # lightest_gray   = '0xE5E5E5' 
 # dark_red        = '0xC30771' 
-# light_red       = '0xE32791' 
 # dark_blue       = '0x008EC4' 
-# light_blue      = '0xB6D6FD' 
 # dark_cyan       = '0x20A5BA' 
-# light_cyan      = '0x4FB8CC' 
 # dark_green      = '0x10A778' 
-# light_green     = '0x5FD7A7' 
 # dark_purple     = '0x523C79' 
+# dark_yellow     = '0xA89C14' 
+# light_blue      = '0xB6D6FD' 
+# light_cyan      = '0x4FB8CC' 
+# light_green     = '0x5FD7A7' 
 # light_purple    = '0x6855DE' 
 # light_yellow    = '0xF3E430' 
-# dark_yellow     = '0xA89C14' 
+# light_red       = '0xE32791' 
 colors:
   primary:
     background: '0x222222'
     foreground: '0xF1F1F1'
+
+    # foreground: '0x222222'
+    # background: '0xFBEFCE'
+    # background: '0xF1F1F1'
 
   normal:
     black: '0x222222'
@@ -176,47 +183,15 @@ colors:
     cyan: '0x4FB8CC'
     white: '0xF1F1F1'
 
-  bright:
-    black: '0x222222'
-    red: '0xE32791'
-    green: '0x5FD7A7'
-    yellow: '0xF3E430'
-    blue: '0xB6D6FD'
-    magenta: '0x6855DE'
-    cyan: '0x4FB8CC'
-    white: '0xF1F1F1'
+    # black: '0x303030'
+    # red: '0xC30771'
+    # green: '0x10A778'
+    # yellow: '0xA89C14'
+    # blue: '0x008EC4'
+    # magenta: '0x523C79'
+    # cyan: '0x20A5BA'
+    # white: '0xF1F1F1'
 
-  # black: '0x222222'
-  # white: '0xC7C7C7'
-  # red: '0xC30771'
-  # green: '0x10A778'
-  # yellow: '0xA89C14'
-  # blue: '0x008EC4'
-  # magenta: '0x523C79'
-  # cyan: '0x20A5BA'
-
-  # Dim colors
-  #
-  # If the dim colors are not set, they will be calculated automatically based
-  # on the `normal` colors.
-  #dim:
-  #  black:   '0x000000'
-  #  red:     '0x8c3336'
-  #  green:   '0x7a8530'
-  #  yellow:  '0x97822e'
-  #  blue:    '0x506d8f'
-  #  magenta: '0x80638e'
-  #  cyan:    '0x497e7a'
-  #  white:   '0x9a9a9a'
-
-  # Indexed Colors
-  #
-  # The indexed colors include all colors from 16 to 256.
-  # When these are not set, they're filled with sensible defaults.
-  #
-  # Example:
-  #   `- { index: 16, color: '0xff00ff' }`
-  #
   indexed_colors: []
 
 # Visual Bell

@@ -6,3 +6,4 @@ things to install:
 - tmux
 - neovim
 - fzf (with neovim)
+- starship
