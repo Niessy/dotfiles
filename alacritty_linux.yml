@@ -92,35 +92,31 @@ font:
   # Point size
   size: 9.0
 
-  # Normal (roman) font face
   normal:
-    # family: Iosevka Slab
-    family: Hack Nerd Font
+    family: Iosevka Term SS09
     style: Regular
 
   bold:
-    # family: Iosevka Slab
-    family: Hack Nerd Font
+    family: Iosevka Term SS09
     style: Bold
 
   italic:
-    # family: Iosevka Slab
-    family: Hack Nerd Font
+    family: Iosevka Term SS09
     style: Italic
 
 
   # Offset is the extra space around each character. `offset.y` can be thought of
   # as modifying the line spacing, and `offset.x` as modifying the letter spacing.
   offset:
-    x: 0
-    y: 0
+    x: 2
+    y: 2
 
   # Glyph offset determines the locations of the glyphs within their cells with
   # the default being at the bottom. Increasing `x` moves the glyph to the right,
   # increasing `y` moves the glyph upwards.
   glyph_offset:
-    x: 0
-    y: 0
+    x: 2
+    y: 2
 
   # Thin stroke font rendering (macOS only)
   #
@@ -143,54 +139,49 @@ draw_bold_text_with_bright_colors: true
 
 # Colors
 #
-# black           = '0x222222' 
-# medium_gray     = '0x767676' 
-# white           = '0xF1F1F1' 
-# light_black     = '0x424242' 
-# lighter_black   = '0x545454' 
-# subtle_black    = '0x303030' 
-# light_gray      = '0x999999' 
-# lighter_gray    = '0xCCCCCC' 
-# lightest_gray   = '0xE5E5E5' 
-# dark_red        = '0xC30771' 
-# dark_blue       = '0x008EC4' 
-# dark_cyan       = '0x20A5BA' 
-# dark_green      = '0x10A778' 
-# dark_purple     = '0x523C79' 
-# dark_yellow     = '0xA89C14' 
-# light_blue      = '0xB6D6FD' 
-# light_cyan      = '0x4FB8CC' 
-# light_green     = '0x5FD7A7' 
-# light_purple    = '0x6855DE' 
-# light_yellow    = '0xF3E430' 
-# light_red       = '0xE32791' 
+# black           : '#222222' 
+# medium_gray     : '#767676' 
+# white           : '#F1F1F1' 
+# light_black     : '#424242' 
+# lighter_black   : '#545454' 
+# subtle_black    : '#303030' 
+# light_gray      : '#999999' 
+# lighter_gray    : '#CCCCCC' 
+# lightest_gray   : '#E5E5E5' 
+#
 colors:
   primary:
-    background: '0x222222'
-    foreground: '0xF1F1F1'
+    background  : '#222222' 
+    # background: '#2D2E35'
+    # background: '#2A303B'
+    foreground: '#EFEDE5'
 
-    # foreground: '0x222222'
-    # background: '0xFBEFCE'
-    # background: '0xF1F1F1'
+    # foreground: '#222222'
+    # background: '#F1F1F1'
+    # background: '#FEFFF4'
+    # background: '#FCFBD4'
+ 
 
   normal:
-    black: '0x222222'
-    red: '0xE32791'
-    green: '0x5FD7A7'
-    yellow: '0xF3E430'
-    blue: '0xB6D6FD'
-    magenta: '0x6855DE'
-    cyan: '0x4FB8CC'
-    white: '0xF1F1F1'
+    black: '#222222'
+    white: '#F1F1F1'
 
-    # black: '0x303030'
-    # red: '0xC30771'
-    # green: '0x10A778'
-    # yellow: '0xA89C14'
-    # blue: '0x008EC4'
-    # magenta: '0x523C79'
-    # cyan: '0x20A5BA'
-    # white: '0xF1F1F1'
+    blue    : '#839EB1'
+    cyan    : '#4FB8CC'
+    green   : '#8BF18B'
+    magenta : '#9B6EF3'
+    yellow  : '#F2D97B'
+    red     : '#FF555E'
+
+    # black: '#303030'
+    # white: '#F1F1F1'
+    #
+    # green    : '#10A778'
+    # yellow   : '#F3C623'
+    # blue     : '#008EC4'
+    # magenta  : '#523C79'
+    # cyan     : '#20A5BA'
+    # red      : '#B63A3F'
 
   indexed_colors: []
 
