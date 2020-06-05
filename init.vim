@@ -260,7 +260,7 @@ map gS <Plug>Sneak_,
 map gs <Plug>Sneak_;
 
 " Change the sneak colors
-highlight Sneak guifg=black guibg=#02C7DF ctermfg=black ctermbg=cyan
+highlight Sneak guifg=black guibg=#5BC5EA ctermfg=black ctermbg=cyan
 highlight SneakScope guifg=red guibg=yellow ctermfg=red ctermbg=yellow
 
 " " Cool prompts
