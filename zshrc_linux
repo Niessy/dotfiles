@@ -3,13 +3,13 @@ bashcompinit
 export ZSH="/home/domluna/.oh-my-zsh"
 ZSH_THEME="robbyrussell"
 
-plugins=(git tmux fd)
-
-source $ZSH/oh-my-zsh.sh
-
 export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
 export MANPATH="/home/linuxbrew/.linuxbrew/share/man:$MANPATH"
 export INFOPATH="/home/linuxbrew/.linuxbrew/share/info:$INFOPATH"
+
+plugins=(git tmux fd)
+
+source $ZSH/oh-my-zsh.sh
 
 export PATH="$PATH:$HOME/julia/usr/bin"
 export PATH="$PATH:/usr/local/cuda/bin"

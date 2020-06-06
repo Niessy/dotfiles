@@ -1,11 +1,11 @@
-{  
+{
   "suggest.echodocSupport": true,
   "suggest.maxCompleteItemCount": 40,
 
   "coc.preferences.formatOnSaveFiletypes": ["go", "python", "json"],
   // "coc.preferences.formatOnSaveFiletypes": ["javascript", "typescript", "typescriptreact", "json", "javascriptreact", "go"],
 
-	"languageserver": {
+  "languageserver": {
     "golang": {
       "command": "gopls",
       "rootPatterns": ["go.mod", ".vim/", ".git/", ".hg/"],
@@ -30,6 +30,7 @@
     }
   },
   "python.formatting.provider": "black",
+  "python.jediEnabled": false,
 
   "diagnostic.enableMessage": "always",
   "diagnostic.errorSign": "X",

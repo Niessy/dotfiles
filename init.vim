@@ -14,11 +14,6 @@ Plug 'godlygeek/tabular'
 " Colorscehmes
 Plug 'andreypopp/vim-colors-plain'
 
-Plug 'neovim/nvim-lsp'
-Plug 'Shougo/deoplete-lsp'
-Plug 'dense-analysis/ale'
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-
 Plug 'uarun/vim-protobuf'
 Plug 'JuliaEditorSupport/julia-vim'
 
@@ -34,6 +29,10 @@ Plug 'justinmk/vim-sneak'
 
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+
+Plug 'dense-analysis/ale'
+
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 call plug#end()
 
@@ -65,27 +64,17 @@ let g:airline_theme='minimalist'
 
 set relativenumber
 
+" let g:deoplete#enable_at_startup = 1
+" call deoplete#custom#source('_', 'max_menu_width', 80)
 "
-" LSP
-"
-" lua require'nvim_lsp'.gopls.setup{}
-" lua require'e'nvim_lsp'.rls.setup{}
-" lua require'nvim_lsp'.pyls.setup{}
-" lua require'nvim_lsp'.pyls_ms.setup{}
-" autocmd Filetype rust setlocal omnifunc=v:lua.vim.lsp.omnifunc
+" " disable preview window
+" set completeopt-=preview
 
-let g:deoplete#enable_at_startup = 1
-call deoplete#custom#source('_', 'max_menu_width', 80)
-
-" disable preview window
-set completeopt-=preview
-
-let g:ale_linters = { 'python': ['flake8', 'mypy', 'pyre'], 'go': ['gopls'] }
-" let g:ale_fixers = { 'python': ['black', 'isort'], 'javascript': ['prettier'], 'c': ['clang-format'], 'go': ['goimports'], 'rust': ['rustfmt'] }
-let g:ale_fixers = { 'python': ['black', 'isort'], 'c': ['clang-format'], 'go': ['goimports'], 'rust': ['rustfmt'] }
-let g:ale_fix_on_save = 1
-let g:ale_hover_to_preview = 1
-
+" let g:ale_linters = { 'python': ['flake8', 'mypy', 'pyre'], 'go': ['gopls'] }
+" " let g:ale_fixers = { 'python': ['black', 'isort'], 'javascript': ['prettier'], 'c': ['clang-format'], 'go': ['goimports'], 'rust': ['rustfmt'] }
+" let g:ale_fixers = { 'python': ['black', 'isort'], 'c': ['clang-format'], 'go': ['goimports'], 'rust': ['rustfmt'] }
+" let g:ale_fix_on_save = 1
+" let g:ale_hover_to_preview = 1
 
 " Better display for messages
 set cmdheight=2
@@ -209,7 +198,7 @@ autocmd Filetype csharp setlocal ts=4 sw=4 sts=0 expandtab
 autocmd Filetype julia setlocal ts=4 sw=4 sts=0 expandtab
 autocmd Filetype javascript setlocal ts=2 sw=2 sts=0 expandtab
 autocmd Filetype markdown setlocal ts=2 sw=2 sts=0 expandtab
-autocmd Filetype vimscript setlocal ts=4 sw=4 sts=0 expandtab
+autocmd Filetype vimscript setlocal ts=2 sw=2 sts=0 expandtab
 autocmd Filetype json setlocal ts=2 sw=2 sts=0 expandtab
 autocmd Filetype vimscript setlocal ts=4 sw=4 sts=0 expandtab
 autocmd Filetype yaml setlocal ts=2 sw=2 sts=0 expandtab
@@ -264,17 +253,11 @@ highlight Sneak guifg=black guibg=#5BC5EA ctermfg=black ctermbg=cyan
 highlight SneakScope guifg=red guibg=yellow ctermfg=red ctermbg=yellow
 
 " " Cool prompts
-" let g:sneak#prompt = '🕵'
-" let g:sneak#prompt = '🔎'
+let g:sneak#prompt = '🕵'
+let g:sneak#prompt = '🔎'
 "
 " " I like quickscope better for this since it keeps me in the scope of a single line
 " map f <Plug>Sneak_f
 " map F <Plug>Sneak_F
 " map t <Plug>Sneak_t
 " map T <Plug>Sneak_T
-"
-
-
-
-
-
