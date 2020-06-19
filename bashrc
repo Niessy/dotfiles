@@ -3,7 +3,7 @@ export PS1="λ \W: "
 
 export TERM=xterm-256color
 
-export PATH=/usr/local/anaconda3/bin:$PATH
+export PATH=/usr/local/conda/bin:$PATH
 
 # Go
 export PATH="/usr/local/opt/openssl/bin:$PATH"

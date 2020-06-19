@@ -77,3 +77,9 @@ export PATH="/home/domluna/go/bin:$PATH"
 
 export PATH="/home/domluna/.deno/bin:$PATH"
 
+if [ -e /home/domluna/.nix-profile/etc/profile.d/nix.sh ]; then . /home/domluna/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
+
+# Appends every command to the history file once it is executed
+setopt inc_append_history
+# Reloads the history whenever you use it
+setopt share_history
