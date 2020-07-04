@@ -1,10 +1,10 @@
 local nvim_lsp = require'nvim_lsp'
--- local nvim_diagnostic = require'diagnostic'
-local nvim_completion = require'completion'
+local nvim_diagnostic = require'diagnostic'
+-- local nvim_completion = require'completion'
 
 local on_attach_nvim = function()
-  -- nvim_diagnostic.on_attach()
-  nvim_completion.on_attach()
+  nvim_diagnostic.on_attach()
+  -- nvim_completion.on_attach()
 end
 
 local servers = {
@@ -30,7 +30,7 @@ local servers = {
           cachingLevel = 'Library',
         },
         formatting = {
-          provider = 'blac'
+          provider = 'black'
         },
         -- venvFolders = {
         --   "envs",

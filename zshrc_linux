@@ -83,3 +83,6 @@ if [ -e /home/domluna/.nix-profile/etc/profile.d/nix.sh ]; then . /home/domluna/
 setopt inc_append_history
 # Reloads the history whenever you use it
 setopt share_history
+
+# create pipenv in project
+export PIPENV_VENV_IN_PROJECT=1

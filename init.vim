@@ -13,6 +13,7 @@ Plug 'godlygeek/tabular'
 
 " Colorscehmes
 Plug 'andreypopp/vim-colors-plain'
+Plug 'cideM/yui'
 
 Plug 'uarun/vim-protobuf'
 Plug 'JuliaEditorSupport/julia-vim'
@@ -32,6 +33,12 @@ Plug 'vim-airline/vim-airline-themes'
 
 Plug 'dense-analysis/ale'
 
+Plug 'neovim/nvim-lsp'
+Plug 'nvim-lua/diagnostic-nvim'
+Plug 'nvim-lua/completion-nvim'
+
+
+Plug 'DanilaMihailov/beacon.nvim'
 
 call plug#end()
 
@@ -51,26 +58,17 @@ if (has("termguicolors"))
   set termguicolors
 endif
 
-
 let g:rainbow#max_level = 16
 let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['{', '}']]
 autocmd FileType * RainbowParentheses
-
-lua require'colorizer'.setup()
 
 let g:airline_theme='minimalist'
 
 set relativenumber
 
-" let g:deoplete#enable_at_startup = 1
-" call deoplete#custom#source('_', 'max_menu_width', 80)
-"
-" " disable preview window
-" set completeopt-=preview
-
 let g:ale_linters = { 'python': ['flake8', 'mypy', 'pyre'], 'go': ['gopls'] }
 " let g:ale_fixers = { 'python': ['black', 'isort'], 'javascript': ['prettier'], 'c': ['clang-format'], 'go': ['goimports'], 'rust': ['rustfmt'] }
-let g:ale_fixers = { 'python': ['black', 'isort'], 'c': ['clang-format'], 'go': ['goimports'], 'rust': ['rustfmt'] }
+let g:ale_fixers = { 'python': ['black', 'isort'], 'c': ['clang-format'], 'go': ['gofmt'], 'rust': ['rustfmt'] }
 let g:ale_fix_on_save = 1
 let g:ale_hover_to_preview = 1
 
@@ -102,6 +100,8 @@ set clipboard^=unnamedplus
 " no backups / swapfiles
 set noswapfile
 set nobackup
+
+set inccommand=nosplit
 
 let mapleader=","
 nnoremap ; :
@@ -256,9 +256,14 @@ highlight SneakScope guifg=red guibg=yellow ctermfg=red ctermbg=yellow
 let g:sneak#prompt = '🕵'
 let g:sneak#prompt = '🔎'
 "
-" " I like quickscope better for this since it keeps me in the scope of a single line
-" map f <Plug>Sneak_f
-" map F <Plug>Sneak_F
-" map t <Plug>Sneak_t
-" map T <Plug>Sneak_T
-"
+
+augroup LuaHighlight
+  autocmd!
+  autocmd TextYankPost * silent! lua require'vim.highlight'.on_yank()
+augroup END
+
+autocmd BufEnter * lua require'completion'.on_attach()
+
+lua require('lsp')
+
+lua require'colorizer'.setup()
