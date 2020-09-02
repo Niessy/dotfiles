@@ -71,19 +71,18 @@ font:
   # Point size
   size: 9.0
 
+  # family: Iosevka Term SS09
+  # family: IBM Plex Mono
   normal:
-    # family: Iosevka Term SS09
-    family: IBM Plex Mono
+    family: JuliaMono
     style: Regular
 
   bold:
-    # family: Iosevka Term SS09
-    family: IBM Plex Mono
+    family: JuliaMono
     style: Bold
 
   italic:
-    # family: Iosevka Term SS09
-    family: IBM Plex Mono
+    family: JuliaMono
     style: Italic
 
 

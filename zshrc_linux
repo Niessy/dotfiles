@@ -8,7 +8,6 @@ export MANPATH="/home/linuxbrew/.linuxbrew/share/man:$MANPATH"
 export INFOPATH="/home/linuxbrew/.linuxbrew/share/info:$INFOPATH"
 
 plugins=(git tmux fd)
-
 source $ZSH/oh-my-zsh.sh
 
 export PATH="$PATH:$HOME/julia/usr/bin"
@@ -18,11 +17,10 @@ export PATH="$PATH:$HOME/.fzf/bin"
 export EDITOR=nvim
 export TERM=screen-256color
 
-# plugins=(git tmux fd)
 
-alias j1='julia'
+alias j='julia'
 alias ls='exa'
-alias tree='ls --tree'
+alias tree='ls -T'
 alias cat='bat'
 alias ..='cd ..'
 alias ...='cd ../..'
@@ -51,10 +49,10 @@ tm() {
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-eval "$(jump shell)"
+eval "$(zoxide init zsh)"
 eval "$(hub alias -s)"
 
-export PATH="/home/domluna/conda/bin:$PATH"
+export PATH="/home/domluna/conda/bin:$PATH"  # commented out by conda initialize
 
 if [ -f "$HOME/.tokens" ]; then
     source $HOME/.tokens
@@ -86,3 +84,7 @@ setopt share_history
 
 # create pipenv in project
 export PIPENV_VENV_IN_PROJECT=1
+
+export PATH="/home/domluna/.poetry/bin:$PATH"
+
+# source HOME/.poetry/env

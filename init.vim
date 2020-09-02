@@ -66,7 +66,7 @@ let g:airline_theme='minimalist'
 
 set relativenumber
 
-let g:ale_linters = { 'python': ['flake8', 'mypy', 'pyre'], 'go': ['gopls'] }
+let g:ale_linters = { 'python': ['flake8', 'mypy'], 'go': ['gopls'], 'javascript': ['flow-language-server'] }
 " let g:ale_fixers = { 'python': ['black', 'isort'], 'javascript': ['prettier'], 'c': ['clang-format'], 'go': ['goimports'], 'rust': ['rustfmt'] }
 let g:ale_fixers = { 'python': ['black', 'isort'], 'c': ['clang-format'], 'go': ['gofmt'], 'rust': ['rustfmt'] }
 let g:ale_fix_on_save = 1
@@ -137,11 +137,7 @@ autocmd! FileType fzf
 autocmd  FileType fzf set laststatus=0 noshowmode noruler
 			\| autocmd BufLeave <buffer> set laststatus=2 showmode ruler
 
-" let g:fzf_layout = { 'down': '~40%' }
 let g:fzf_layout = {'up':'~90%', 'window': { 'width': 0.85, 'height': 0.85, 'yoffset':0.5, 'xoffset': 0.5, 'border': 'sharp' } }
-" let g:fzf_layout = { 'window': 'enew' }
-" let g:fzf_layout = { 'window': '-tabnew' }
-" let g:fzf_layout = { 'window': '20split enew' }
 
 " Customize fzf colors to match your color scheme
 let g:fzf_colors =
@@ -266,4 +262,10 @@ autocmd BufEnter * lua require'completion'.on_attach()
 
 lua require('lsp')
 
+let g:diagnostic_auto_popup_while_jump = 0
+let g:diagnostic_enable_virtual_text = 0
+let g:diagnostic_enable_underline = 0
+let g:completion_timer_cycle = 200 "default value is 80
+
 lua require'colorizer'.setup()
+
