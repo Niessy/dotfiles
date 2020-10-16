@@ -81,7 +81,7 @@ tabspaces: 4
 # Font configuration (changes require restart)
 font:
   # Point size
-  size: 10.0
+  size: 9.0
 
   # Normal (roman) font face
   normal:
@@ -176,39 +176,6 @@ colors:
     magenta: '0x6855DE'
     cyan: '0x4FB8CC'
     white: '0xF1F1F1'
-
-  # black: '0x222222'
-  # white: '0xC7C7C7'
-  # red: '0xC30771'
-  # green: '0x10A778'
-  # yellow: '0xA89C14'
-  # blue: '0x008EC4'
-  # magenta: '0x523C79'
-  # cyan: '0x20A5BA'
-
-  # Dim colors
-  #
-  # If the dim colors are not set, they will be calculated automatically based
-  # on the `normal` colors.
-  #dim:
-  #  black:   '0x000000'
-  #  red:     '0x8c3336'
-  #  green:   '0x7a8530'
-  #  yellow:  '0x97822e'
-  #  blue:    '0x506d8f'
-  #  magenta: '0x80638e'
-  #  cyan:    '0x497e7a'
-  #  white:   '0x9a9a9a'
-
-  # Indexed Colors
-  #
-  # The indexed colors include all colors from 16 to 256.
-  # When these are not set, they're filled with sensible defaults.
-  #
-  # Example:
-  #   `- { index: 16, color: '0xff00ff' }`
-  #
-  indexed_colors: []
 
 # Visual Bell
 #

@@ -13,10 +13,10 @@ Plug 'godlygeek/tabular'
 
 " Colorscehmes
 Plug 'andreypopp/vim-colors-plain'
-Plug 'cideM/yui'
+Plug 'arcticicestudio/nord-vim'
 
 Plug 'uarun/vim-protobuf'
-Plug 'JuliaEditorSupport/julia-vim'
+" Plug 'JuliaEditorSupport/julia-vim'
 
 Plug 'norcalli/nvim-colorizer.lua'
 Plug 'junegunn/rainbow_parentheses.vim'
@@ -31,12 +31,11 @@ Plug 'justinmk/vim-sneak'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
-Plug 'dense-analysis/ale'
+" Plug 'dense-analysis/ale'
 
 Plug 'neovim/nvim-lsp'
 Plug 'nvim-lua/diagnostic-nvim'
 Plug 'nvim-lua/completion-nvim'
-
 
 Plug 'DanilaMihailov/beacon.nvim'
 
@@ -48,15 +47,13 @@ autocmd VimEnter *
   \|   PlugInstall --sync | q
   \| endif
 
+set termguicolors
+highlight Normal guibg=none guifg=none
 
-set background=dark
+" set background=dark
 " set background=light
 colo plain
 
-" checks if your terminal has 24-bit color support
-if (has("termguicolors"))
-  set termguicolors
-endif
 
 let g:rainbow#max_level = 16
 let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['{', '}']]
@@ -66,11 +63,11 @@ let g:airline_theme='minimalist'
 
 set relativenumber
 
-let g:ale_linters = { 'python': ['flake8', 'mypy'], 'go': ['gopls'], 'javascript': ['flow-language-server'] }
-" let g:ale_fixers = { 'python': ['black', 'isort'], 'javascript': ['prettier'], 'c': ['clang-format'], 'go': ['goimports'], 'rust': ['rustfmt'] }
-let g:ale_fixers = { 'python': ['black', 'isort'], 'c': ['clang-format'], 'go': ['gofmt'], 'rust': ['rustfmt'] }
-let g:ale_fix_on_save = 1
-let g:ale_hover_to_preview = 1
+" let g:ale_linters = { 'python': ['flake8', 'mypy'], 'go': ['gopls'], 'javascript': ['flow-language-server'] }
+" " let g:ale_fixers = { 'python': ['black', 'isort'], 'javascript': ['prettier'], 'c': ['clang-format'], 'go': ['goimports'], 'rust': ['rustfmt'] }
+" let g:ale_fixers = { 'python': ['black', 'isort'], 'c': ['clang-format'], 'go': ['gofmt'], 'rust': ['rustfmt'] }
+" let g:ale_fix_on_save = 1
+" let g:ale_hover_to_preview = 1
 
 " Better display for messages
 set cmdheight=2
@@ -156,22 +153,37 @@ let g:fzf_colors =
   \ 'header':  ['fg', 'Comment'] }
 
 "Get Files
-" command! -bang -nargs=? -complete=dir Files
-"     \ call fzf#vim#files(<q-args>, fzf#vim#with_preview({'options': ['--layout=reverse', '--info=inline']}), <bang>0)
+command! -bang -nargs=? -complete=dir Files
+    \ call fzf#vim#files(<q-args>, fzf#vim#with_preview({'options': ['--layout=reverse', '--info=inline']}), <bang>0)
 
 " .git,.mypy_cache,node_modules,vendor
 
 " Get text in files with Rg
-command! -bang -nargs=* Rg
-  \ call fzf#vim#grep(
-  \   'rg --column --line-number --no-heading --color=always --smart-case '.shellescape(<q-args>), 1,
-  \   fzf#vim#with_preview(), <bang>0)
+" command! -bang -nargs=* Rg
+"   \ call fzf#vim#grep(
+"   \   'rg --column --line-number --no-heading --color=always --smart-case '.shellescape(<q-args>), 1,
+"   \   fzf#vim#with_preview({'options': ['--info=inline']}), <bang>0)
+"   " \   fzf#vim#with_preview(), <bang>0)
+
+function! RipgrepFzf(query, fullscreen)
+  let command_fmt = 'rg --column --line-number --no-heading --color=always --smart-case -- %s || true'
+  let initial_command = printf(command_fmt, shellescape(a:query))
+  let reload_command = printf(command_fmt, '{q}')
+  let spec = {'options': ['--phony', '--query', a:query, '--bind', 'change:reload:'.reload_command]}
+  call fzf#vim#grep(initial_command, 1, fzf#vim#with_preview(spec), a:fullscreen)
+endfunction
+
+command! -nargs=* -bang RG call RipgrepFzf(<q-args>, <bang>0)
 
 nnoremap <silent><C-p> :Files<CR>
 nnoremap <silent><Leader>b :Buffers<CR>
 nnoremap <silent><Leader>l :Lines<CR>
 nnoremap <silent><Leader>h :nohlsearch<CR>
-map <silent><Leader>r :Rg<CR>
+map <silent><Leader>r :RG<CR>
+
+" imap <c-x><c-k> <plug>(fzf-complete-word)
+" imap <c-x><c-f> <plug>(fzf-complete-path)
+" imap <c-x><c-l> <plug>(fzf-complete-line)
 
 " comment
 map <silent><Leader>c :TComment<CR>
@@ -231,7 +243,7 @@ lua require("navigation")
 autocmd VimResized * wincmd =
 
 " auto source when writing to init.vm alternatively you can run :source $MYVIMRC
-au! BufWritePost $MYVIMRC source %      
+au! BufWritePost $MYVIMRC source %
 
 let g:sneak#label = 1
 " smartcase
@@ -269,3 +281,11 @@ let g:completion_timer_cycle = 200 "default value is 80
 
 lua require'colorizer'.setup()
 
+" JuliaFormatter
+" let g:JuliaFormatter_options = {
+"         \ 'indent'                    : 4,
+"         \ 'margin'                    : 92,
+"         \ 'always_for_in'             : v:true,
+"         \ 'whitespace_ops_in_indices' : v:false,
+"         \ 'remove_extra_newlines' : v:true,
+"         \ }

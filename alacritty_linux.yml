@@ -69,7 +69,7 @@ scrolling:
 # Font configuration (changes require restart)
 font:
   # Point size
-  size: 9.0
+  size: 8.0
 
   # family: Iosevka Term SS09
   # family: IBM Plex Mono
@@ -130,41 +130,31 @@ draw_bold_text_with_bright_colors: true
 # lighter_gray    : '#CCCCCC' 
 # lightest_gray   : '#E5E5E5' 
 #
+
 colors:
   primary:
-    background  : '#222222' 
-    # background: '#2D2E35'
-    # background: '#2A303B'
-    foreground: '#EFEDE5'
-
-    # foreground: '#222222'
-    # background: '#F1F1F1'
-    # background: '#FEFFF4'
-    # background: '#FCFBD4'
- 
+    background: '0x222222'
+    foreground: '0xF1F1F1'
 
   normal:
-    black: '#222222'
-    white: '#F1F1F1'
+    black: '0x222222'
+    red: '0xE32791'
+    green: '0x5FD7A7'
+    yellow: '0xF3E430'
+    blue: '0xB6D6FD'
+    magenta: '0x6855DE'
+    cyan: '0x4FB8CC'
+    white: '0xF1F1F1'
 
-    blue    : '#839EB1'
-    cyan    : '#4FB8CC'
-    green   : '#8BF18B'
-    magenta : '#9B6EF3'
-    yellow  : '#F2D97B'
-    red     : '#FF555E'
-
-    # black: '#303030'
-    # white: '#F1F1F1'
-    #
-    # green    : '#10A778'
-    # yellow   : '#F3C623'
-    # blue     : '#008EC4'
-    # magenta  : '#523C79'
-    # cyan     : '#20A5BA'
-    # red      : '#B63A3F'
-
-  indexed_colors: []
+  bright:
+    black: '0x222222'
+    red: '0xE32791'
+    green: '0x5FD7A7'
+    yellow: '0xF3E430'
+    blue: '0xB6D6FD'
+    magenta: '0x6855DE'
+    cyan: '0x4FB8CC'
+    white: '0xF1F1F1'
 
 # Visual Bell
 #

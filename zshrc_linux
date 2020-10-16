@@ -61,6 +61,7 @@ fi
 export LD_LIBRARY_PATH=/usr/local/cuda/targets/x86_64-linux/lib
 
 export JULIA_REVISE_INCLUDE=1
+export JULIA_NUM_THREADS=4
 
 export DUMP1=/media/domluna/c2ad5753-ddfb-460f-af6d-c708af9b0874
 # /mnt/c2ad5753-ddfb-460f-af6d-c708af9b0874
@@ -87,4 +88,8 @@ export PIPENV_VENV_IN_PROJECT=1
 
 export PATH="/home/domluna/.poetry/bin:$PATH"
 
+# easy place to put manually downloaded binaries
+export PATH="/home/domluna/bin:$PATH"
+
 # source HOME/.poetry/env
+
