@@ -130,31 +130,42 @@ draw_bold_text_with_bright_colors: true
 # lighter_gray    : '#CCCCCC' 
 # lightest_gray   : '#E5E5E5' 
 #
+# background: '0x222222'
+# foreground: '0xF1F1F1'
 
 colors:
   primary:
-    background: '0x222222'
-    foreground: '0xF1F1F1'
+    # dark
+    background: '#242828'
+    foreground: '#FFFFFF'
 
-  normal:
-    black: '0x222222'
-    red: '0xE32791'
-    green: '0x5FD7A7'
-    yellow: '0xF3E430'
-    blue: '0xB6D6FD'
-    magenta: '0x6855DE'
-    cyan: '0x4FB8CC'
-    white: '0xF1F1F1'
+    # light
+    # background: '#F1F3F1'
+    # foreground: '#000000'
 
-  bright:
-    black: '0x222222'
-    red: '0xE32791'
-    green: '0x5FD7A7'
-    yellow: '0xF3E430'
-    blue: '0xB6D6FD'
-    magenta: '0x6855DE'
-    cyan: '0x4FB8CC'
-    white: '0xF1F1F1'
+    # matrix
+    # background: '0x141F15'
+    # foreground: '0x7AFE8A'
+
+  # normal:
+  #   black: '0x222222'
+  #   red: '0xE32791'
+    # green: '0x5FD7A7'
+  #   yellow: '0xF3E430'
+  #   blue: '0xB6D6FD'
+  #   magenta: '0x6855DE'
+  #   cyan: '0x4FB8CC'
+  #   white: '0xF1F1F1'
+  #
+  # bright:
+  #   black: '0x222222'
+  #   red: '0xE32791'
+  #   green: '0x5FD7A7'
+  #   yellow: '0xF3E430'
+  #   blue: '0xB6D6FD'
+  #   magenta: '0x6855DE'
+  #   cyan: '0x4FB8CC'
+  #   white: '0xF1F1F1'
 
 # Visual Bell
 #
