@@ -136,16 +136,16 @@ draw_bold_text_with_bright_colors: true
 colors:
   primary:
     # dark
-    background: '#242828'
-    foreground: '#FFFFFF'
+    # background: '#242828'
+    # foreground: '#FFFFFF'
 
     # light
     # background: '#F1F3F1'
     # foreground: '#000000'
 
     # matrix
-    # background: '0x141F15'
-    # foreground: '0x7AFE8A'
+    background: '0x141F15'
+    foreground: '0x7AFE8A'
 
   # normal:
   #   black: '0x222222'

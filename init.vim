@@ -47,19 +47,18 @@ autocmd VimEnter *
   \|   PlugInstall --sync | q
   \| endif
 
+
+let g:airline_theme='minimalist'
+
+
 set termguicolors
 highlight Normal guibg=none guifg=none
-
-" set background=dark
-" set background=light
-colo plain
-
+" colo plain
+syntax off
 
 let g:rainbow#max_level = 16
 let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['{', '}']]
 autocmd FileType * RainbowParentheses
-
-let g:airline_theme='minimalist'
 
 set relativenumber
 
