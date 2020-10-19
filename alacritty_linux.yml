@@ -75,16 +75,11 @@ font:
   # family: IBM Plex Mono
   normal:
     family: JuliaMono
-    style: Regular
+    style: Medium
 
   bold:
     family: JuliaMono
     style: Bold
-
-  italic:
-    family: JuliaMono
-    style: Italic
-
 
   # Offset is the extra space around each character. `offset.y` can be thought of
   # as modifying the line spacing, and `offset.x` as modifying the letter spacing.
