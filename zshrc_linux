@@ -21,7 +21,6 @@ export TERM=screen-256color
 alias j='julia'
 alias ls='exa'
 alias tree='ls -T'
-alias cat='bat'
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'

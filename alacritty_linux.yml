@@ -72,7 +72,7 @@ scrolling:
 # Font configuration (changes require restart)
 font:
   # Point size
-  size: 8.0
+  size: 9.0
 
   normal:
     family: JuliaMono
@@ -142,12 +142,12 @@ draw_bold_text_with_bright_colors: true
 colors:
   primary:
     # dark
-    foreground: '#F1F3F1'
-    background: '#140f14'
+    # foreground: '#F1F3F1'
+    # background: '#140f14'
 
     # light
-    # background: '#F1F3F1'
-    # foreground: '#140f14'
+    background: '#F1F3F1'
+    foreground: '#140f14'
 
   # normal:
   #   white: '#F1F3F1'

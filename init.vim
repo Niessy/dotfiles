@@ -46,14 +46,16 @@ autocmd VimEnter *
 
 let g:airline_theme='minimalist'
 
-
-set termguicolors
-highlight Normal guibg=none guifg=none
-syntax off
-
 let g:rainbow#max_level = 16
 let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['{', '}']]
 autocmd FileType * RainbowParentheses
+
+syntax off
+
+set termguicolors
+" highlight Normal guibg=none guifg=none
+
+
 
 set relativenumber
 
@@ -130,34 +132,11 @@ autocmd  FileType fzf set laststatus=0 noshowmode noruler
 
 let g:fzf_layout = {'up':'~90%', 'window': { 'width': 0.85, 'height': 0.85, 'yoffset':0.5, 'xoffset': 0.5, 'border': 'sharp' } }
 
-" Customize fzf colors to match your color scheme
-let g:fzf_colors =
-\ { 'fg':      ['fg', 'Normal'],
-  \ 'bg':      ['bg', 'Normal'],
-  \ 'hl':      ['fg', 'Comment'],
-  \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
-  \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
-  \ 'hl+':     ['fg', 'Statement'],
-  \ 'info':    ['fg', 'PreProc'],
-  \ 'border':  ['fg', 'Ignore'],
-  \ 'prompt':  ['fg', 'Conditional'],
-  \ 'pointer': ['fg', 'Exception'],
-  \ 'marker':  ['fg', 'Keyword'],
-  \ 'spinner': ['fg', 'Label'],
-  \ 'header':  ['fg', 'Comment'] }
-
 "Get Files
 command! -bang -nargs=? -complete=dir Files
     \ call fzf#vim#files(<q-args>, fzf#vim#with_preview({'options': ['--layout=reverse', '--info=inline']}), <bang>0)
 
 " .git,.mypy_cache,node_modules,vendor
-
-" Get text in files with Rg
-" command! -bang -nargs=* Rg
-"   \ call fzf#vim#grep(
-"   \   'rg --column --line-number --no-heading --color=always --smart-case '.shellescape(<q-args>), 1,
-"   \   fzf#vim#with_preview({'options': ['--info=inline']}), <bang>0)
-"   " \   fzf#vim#with_preview(), <bang>0)
 
 function! RipgrepFzf(query, fullscreen)
   let command_fmt = 'rg --column --line-number --no-heading --color=always --smart-case -- %s || true'
