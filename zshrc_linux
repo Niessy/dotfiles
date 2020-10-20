@@ -92,4 +92,3 @@ export PATH="/home/domluna/.poetry/bin:$PATH"
 export PATH="/home/domluna/bin:$PATH"
 
 # source HOME/.poetry/env
-

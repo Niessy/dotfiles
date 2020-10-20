@@ -11,10 +11,6 @@ Plug 'tpope/vim-fugitive'
 Plug 'junegunn/gv.vim'
 Plug 'godlygeek/tabular'
 
-" Colorscehmes
-Plug 'andreypopp/vim-colors-plain'
-Plug 'arcticicestudio/nord-vim'
-
 Plug 'uarun/vim-protobuf'
 " Plug 'JuliaEditorSupport/julia-vim'
 
@@ -53,7 +49,6 @@ let g:airline_theme='minimalist'
 
 set termguicolors
 highlight Normal guibg=none guifg=none
-" colo plain
 syntax off
 
 let g:rainbow#max_level = 16

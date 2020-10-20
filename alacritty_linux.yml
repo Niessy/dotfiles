@@ -13,7 +13,10 @@
   #TERM: xterm-256color
   # WINIT_HIDPI_FACTOR: 1
 #
+#
 window:
+  # Allow terminal applications to change Alacritty's window title.
+  dynamic_title: true
   # Window dimensions (changes require restart)
   #
   # Specified in number of columns/lines, not pixels.
@@ -71,8 +74,6 @@ font:
   # Point size
   size: 8.0
 
-  # family: Iosevka Term SS09
-  # family: IBM Plex Mono
   normal:
     family: JuliaMono
     style: Medium
@@ -125,42 +126,72 @@ draw_bold_text_with_bright_colors: true
 # lighter_gray    : '#CCCCCC' 
 # lightest_gray   : '#E5E5E5' 
 #
-# background: '0x222222'
-# foreground: '0xF1F1F1'
+# dark_red        : '#C30771' 
+# light_red       : '#E32791' 
+# dark_blue       : '#008EC4' 
+# light_blue      : '#B6D6FD' 
+# dark_cyan       : '#20A5BA' 
+# light_cyan      : '#4FB8CC' 
+# dark_green      : '#10A778' 
+# light_green     : '#5FD7A7' 
+# dark_purple     : '#523C79' 
+# light_purple    : '#6855DE' 
+# light_yellow    : '#F3E430' 
+# dark_yellow     : '#A89C14' 
 
 colors:
   primary:
     # dark
-    # background: '#242828'
-    # foreground: '#FFFFFF'
+    foreground: '#F1F3F1'
+    background: '#140f14'
 
     # light
     # background: '#F1F3F1'
-    # foreground: '#000000'
-
-    # matrix
-    background: '0x141F15'
-    foreground: '0x7AFE8A'
+    # foreground: '#140f14'
 
   # normal:
-  #   black: '0x222222'
-  #   red: '0xE32791'
-    # green: '0x5FD7A7'
-  #   yellow: '0xF3E430'
-  #   blue: '0xB6D6FD'
-  #   magenta: '0x6855DE'
-  #   cyan: '0x4FB8CC'
-  #   white: '0xF1F1F1'
-  #
+  #   white: '#F1F3F1'
+  #   black: '#140f14'
+  #   red: '#c30771'
+  #   green: '#10A778' 
+  #   yellow: '#FFAF5F'
+  #   # blue: '#B6D6FD'
+  #   blue: '#008EC4'
+  #   magenta: '#6855DE'
+  #   cyan: '#4FB8CC'
+
   # bright:
-  #   black: '0x222222'
-  #   red: '0xE32791'
-  #   green: '0x5FD7A7'
-  #   yellow: '0xF3E430'
-  #   blue: '0xB6D6FD'
-  #   magenta: '0x6855DE'
-  #   cyan: '0x4FB8CC'
-  #   white: '0xF1F1F1'
+  #   white: '#F1F3F1'
+  #   black: '#140f14'
+  #   red: '#E32791'
+  #   # green: '#5FD7A7'
+  #   green: '#10A778' 
+  #   blue: '#008EC4'
+  #   magenta: '#6855DE'
+  #   cyan: '#4FB8CC'
+  #   yellow: '#FFAF5F'
+
+ # Normal colors
+  normal:
+    black:   '#073642' # base02
+    red:     '#dc322f' # red
+    green:   '#859900' # green
+    yellow:  '#b58900' # yellow
+    blue:    '#268bd2' # blue
+    magenta: '#d33682' # magenta
+    cyan:    '#2aa198' # cyan
+    white:   '#eee8d5' # base2
+
+  # Bright colors
+  bright:
+    black:   '#002b36' # base03
+    red:     '#cb4b16' # orange
+    green:   '#586e75' # base01
+    yellow:  '#657b83' # base00
+    blue:    '#839496' # base0
+    magenta: '#6c71c4' # violet
+    cyan:    '#93a1a1' # base1
+    white:   '#fdf6e3' # base3
 
 # Visual Bell
 #
@@ -183,7 +214,7 @@ colors:
 #   - Linear
 #
 # Specifying a `duration` of `0` will disable the visual bell.
-visual_bell:
+bell:
   animation: EaseOutExpo
   duration: 0
   color: '0xffffff'
@@ -248,8 +279,6 @@ selection:
   # When set to `true`, selected text will be copied to the primary clipboard.
   save_to_clipboard: true
 
-# Allow terminal applications to change Alacritty's window title.
-dynamic_title: true
 
 cursor:
   # Cursor style
