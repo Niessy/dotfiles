@@ -4,7 +4,14 @@
 # environment variables. Some entries may override variables
 # set by alacritty itself.
 env:
-  TERM: xterm-256color
+  # TERM: xterm-256color
+  TERM: alacritty
+
+window:
+  dynamic_padding: true
+
+  padding:
+    x: 5
 
 scrolling:
   # Maximum number of lines in the scrollback buffer.
