@@ -80,11 +80,6 @@ set signcolumn=yes
 
 " Escapes
 inoremap jj <Esc>
-inoremap jk <Esc>
-inoremap kj <Esc>
-inoremap JJ <Esc>
-inoremap JK <Esc>
-inoremap KJ <Esc>
 
 set hidden
 set number

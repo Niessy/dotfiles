@@ -18,7 +18,7 @@ scrolling:
 # Font configuration (changes require restart)
 font:
   # Point size
-  size: 9.0
+  size: 9.5
 
   normal:
     family: JuliaMono
@@ -27,8 +27,6 @@ font:
   bold:
     family: JuliaMono
     style: Bold
-
-  use_thin_strokes: true
 
 # Colors
 #
@@ -63,8 +61,8 @@ colors:
     # foreground: '#F1F3F1'
     background: '#040404'
     foreground: '#ffffff'
-    background: '#0e0e0e'
-    foreground: '#eeeeee'
+    # background: '#0e0e0e'
+    # foreground: '#eeeeee'
 
     # light 
 
@@ -75,49 +73,27 @@ colors:
     # background: '#fafafa'
     # foreground: '#000000'
 
-  # normal:
-  #   white: '#F1F3F1'
-  #   black: '#140f14'
-  #   red: '#c30771'
-  #   green: '#10A778' 
-  #   yellow: '#FFAF5F'
-  #   # blue: '#B6D6FD'
-  #   blue: '#008EC4'
-  #   magenta: '#6855DE'
-  #   cyan: '#4FB8CC'
-
-  # bright:
-  #   white: '#F1F3F1'
-  #   black: '#140f14'
-  #   red: '#E32791'
-  #   # green: '#5FD7A7'
-  #   green: '#10A778' 
-  #   blue: '#008EC4'
-  #   magenta: '#6855DE'
-  #   cyan: '#4FB8CC'
-  #   yellow: '#FFAF5F'
-
- # Normal colors
-  normal:
-    black:   '#073642' # base02
-    red:     '#dc322f' # red
-    green:   '#859900' # green
-    yellow:  '#b58900' # yellow
-    blue:    '#268bd2' # blue
-    magenta: '#d33682' # magenta
-    cyan:    '#2aa198' # cyan
-    white:   '#eee8d5' # base2
-
-  # Bright colors
-  bright:
-    black:   '#002b36' # base03
-    red:     '#cb4b16' # orange
-    green:   '#586e75' # base01
-    yellow:  '#657b83' # base00
-    blue:    '#839496' # base0
-    magenta: '#6c71c4' # violet
-    cyan:    '#93a1a1' # base1
-    white:   '#fdf6e3' # base3
+#  # Normal colors
+#   normal:
+#     black:   '#073642' # base02
+#     red:     '#dc322f' # red
+#     green:   '#859900' # green
+#     yellow:  '#b58900' # yellow
+#     blue:    '#268bd2' # blue
+#     magenta: '#d33682' # magenta
+#     cyan:    '#2aa198' # cyan
+#     white:   '#eee8d5' # base2
+#
+#   # Bright colors
+#   bright:
+#     black:   '#002b36' # base03
+#     red:     '#cb4b16' # orange
+#     green:   '#586e75' # base01
+#     yellow:  '#657b83' # base00
+#     blue:    '#839496' # base0
+#     magenta: '#6c71c4' # violet
+#     cyan:    '#93a1a1' # base1
+#     white:   '#fdf6e3' # base3
 
 # Visual Bell
 #
