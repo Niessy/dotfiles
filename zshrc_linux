@@ -1,7 +1,7 @@
 autoload bashcompinit
 bashcompinit
 export ZSH="/home/domluna/.oh-my-zsh"
-ZSH_THEME="robbyrussell"
+ZSH_THEME="spaceship"
 
 export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
 export MANPATH="/home/linuxbrew/.linuxbrew/share/man:$MANPATH"
@@ -64,7 +64,6 @@ export JULIA_NUM_THREADS=4
 export DUMP1=/media/domluna/c2ad5753-ddfb-460f-af6d-c708af9b0874
 # /mnt/c2ad5753-ddfb-460f-af6d-c708af9b0874
 #
-
 # ln -s /mnt/c2ad5753-ddfb-460f-af6d-c708af9b0874 $HOME/mount1
 
 export PKG_CONFIG_PATH=/usr/lib/x86_64-linux-gnu/pkgconfig:/usr/share/pkgconfig:$PKG_CONFIG_PATH
@@ -83,7 +82,6 @@ setopt share_history
 
 # create pipenv in project
 export PIPENV_VENV_IN_PROJECT=1
-
 export PATH="/home/domluna/.poetry/bin:$PATH"
 
 # easy place to put manually downloaded binaries
