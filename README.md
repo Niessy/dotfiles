@@ -1,9 +1,9 @@
 things to install:
 
-- alacritty
-- bat
-- exa
-- tmux
-- neovim
-- fzf (with neovim)
-- starship
+* alacritty
+* exa
+* tmux
+* neovim
+* fzf (via fzf.vim)
+* starship (?)
+* tmux plugins https://github.com/tmux-plugins/tpm

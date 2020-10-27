@@ -15,8 +15,6 @@ export PATH="$PATH:/usr/local/cuda/bin"
 export PATH="$PATH:$HOME/.fzf/bin"
 
 export EDITOR=nvim
-export TERM=screen-256color
-
 
 alias j='julia'
 alias ls='exa'
@@ -33,8 +31,9 @@ alias gc='git commit'
 alias md='mkdir -p'
 alias py='ipython'
 
-export FZF_DEFAULT_OPTS='--height 96% --reverse --inline-info --preview "cat {}"'
+export FZF_DEFAULT_OPTS='--height 96% --reverse --inline-info'
 export FZF_DEFAULT_COMMAND="fd --type f --hidden --follow --exclude '{.git,.mypy_cache,node_modules,vendor}/'"
+# export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS' --color=fg:#ff0000,bg:-1,hl:#000000 --color=fg+:#ffffff,bg+:#000000,hl+:#ffffff --color=info:#000000,prompt:#000000,pointer:#ffffff --color=marker:#ffffff,spinner:#000000,header:#000000'
 
 bindkey -s '\C-p' 'nvim $(fzf)\n'
 

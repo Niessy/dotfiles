@@ -35,6 +35,8 @@ Plug 'nvim-lua/completion-nvim'
 
 Plug 'DanilaMihailov/beacon.nvim'
 
+Plug 'andreypopp/vim-colors-plain'
+
 call plug#end()
 
 " Automatically install missing plugins on startup
@@ -50,12 +52,11 @@ let g:rainbow#max_level = 16
 let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['{', '}']]
 autocmd FileType * RainbowParentheses
 
-syntax off
-
 set termguicolors
 " highlight Normal guibg=none guifg=none
-
-
+" set background=light
+set background=dark
+colorscheme plain
 
 set relativenumber
 
@@ -124,6 +125,22 @@ map <C-l> <C-W>l
 "
 " FZF
 "
+
+" Customize fzf colors to match your color scheme
+let g:fzf_colors =
+\ { 'fg':      ['fg', 'Normal'],
+  \ 'bg':      ['bg', 'Normal'],
+  \ 'hl':      ['fg', 'Comment'],
+  \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+  \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
+  \ 'hl+':     ['fg', 'Statement'],
+  \ 'info':    ['fg', 'PreProc'],
+  \ 'border':  ['fg', 'Ignore'],
+  \ 'prompt':  ['fg', 'Conditional'],
+  \ 'pointer': ['fg', 'Exception'],
+  \ 'marker':  ['fg', 'Keyword'],
+  \ 'spinner': ['fg', 'Label'],
+  \ 'header':  ['fg', 'Comment'] }
 
 " Hide statusline of terminal buffer
 autocmd! FileType fzf
