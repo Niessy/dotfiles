@@ -66,10 +66,10 @@ colors:
 
     # background: '#140f14'
     # foreground: '#F1F3F1'
-    background: '#040404'
-    foreground: '#ffffff'
-    # background: '#0e0e0e'
-    # foreground: '#eeeeee'
+    # background: '#040404'
+    # foreground: '#ffffff'
+    background: '#0e0e0e'
+    foreground: '#eeeeee'
 
     # light 
 
