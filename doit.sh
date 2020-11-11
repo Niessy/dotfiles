@@ -7,6 +7,7 @@ rm ~/.tmux.conf
 rm ~/.gitconfig
 rm ~/.bashrc
 rm ~/.zshrc
+rm ~/.config/kitty/kitty.conf
 rm ~/.config/alacritty/alacritty.yml
 rm ~/.julia/config/startup.jl
 rm ~/.julia/config/startup_ijulia.jl
@@ -16,6 +17,7 @@ rm ~/.julia/config/startup_ijulia.jl
 mkdir -p ~/.config/alacritty
 mkdir -p ~/.config/nvim/{lua,vim}
 mkdir -p ~/.julia/config
+mkdir -p ~/.config/kitty
 
 if [ "$(uname -s)" == "Darwin" ]
 then
@@ -38,3 +40,4 @@ ln -s $PWD/startup_ijulia.jl ~/.julia/config/startup_ijulia.jl
 ln -s $PWD/lua/*.lua ~/.config/nvim/lua/
 ln -s $PWD/vim/* ~/.config/nvim/vim/
 ln -s $PWD/starship.toml ~/.config/starship.toml
+ln -s $PWD/kitty.conf ~/.config/kitty/kitty.conf
