@@ -62,8 +62,8 @@ set relativenumber
 
 " let g:ale_linters = { 'python': ['flake8', 'mypy'], 'go': ['gopls'], 'javascript': ['flow-language-server'] }
 " " let g:ale_fixers = { 'python': ['black', 'isort'], 'javascript': ['prettier'], 'c': ['clang-format'], 'go': ['goimports'], 'rust': ['rustfmt'] }
-" let g:ale_fixers = { 'python': ['black', 'isort'], 'c': ['clang-format'], 'go': ['gofmt'], 'rust': ['rustfmt'] }
-" let g:ale_fix_on_save = 1
+let g:ale_fixers = { 'python': ['black', 'isort'], 'go': ['gofmt'] }
+let g:ale_fix_on_save = 1
 " let g:ale_hover_to_preview = 1
 
 " Better display for messages
