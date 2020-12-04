@@ -270,3 +270,6 @@ lua require'colorizer'.setup()
 "         \ 'whitespace_ops_in_indices' : v:false,
 "         \ 'remove_extra_newlines' : v:true,
 "         \ }
+
+" Automatic formatting for Julia files
+" autocmd FileType julia nnoremap <buffer> <c-f> :JuliaFormatterFormat<cr>
