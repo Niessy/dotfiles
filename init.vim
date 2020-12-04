@@ -1,6 +1,8 @@
 call plug#begin('~/.local/share/nvim/plugged')
 
 Plug 'sheerun/vim-polyglot'
+Plug 'uarun/vim-protobuf'
+Plug 'lifepillar/pgsql.vim'
 
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
@@ -10,9 +12,6 @@ Plug 'tomtom/tcomment_vim'
 Plug 'tpope/vim-fugitive'
 Plug 'junegunn/gv.vim'
 Plug 'godlygeek/tabular'
-
-Plug 'uarun/vim-protobuf'
-" Plug 'JuliaEditorSupport/julia-vim'
 
 Plug 'norcalli/nvim-colorizer.lua'
 Plug 'junegunn/rainbow_parentheses.vim'
@@ -27,15 +26,15 @@ Plug 'justinmk/vim-sneak'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
-" Plug 'dense-analysis/ale'
-
-Plug 'neovim/nvim-lsp'
-Plug 'nvim-lua/diagnostic-nvim'
-Plug 'nvim-lua/completion-nvim'
+" Plug 'neovim/nvim-lsp'
+" Plug 'nvim-lua/diagnostic-nvim'
+" Plug 'nvim-lua/completion-nvim'
 
 Plug 'DanilaMihailov/beacon.nvim'
 
-Plug 'andreypopp/vim-colors-plain'
+Plug 'lifepillar/vim-gruvbox8'
+
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
 call plug#end()
 
@@ -46,6 +45,8 @@ autocmd VimEnter *
   \| endif
 
 
+let g:deoplete#enable_at_startup = 1
+
 let g:airline_theme='minimalist'
 
 let g:rainbow#max_level = 16
@@ -54,17 +55,12 @@ autocmd FileType * RainbowParentheses
 
 set termguicolors
 " highlight Normal guibg=none guifg=none
+
 " set background=light
 set background=dark
-colorscheme plain
+colorscheme gruvbox8
 
 set relativenumber
-
-" let g:ale_linters = { 'python': ['flake8', 'mypy'], 'go': ['gopls'], 'javascript': ['flow-language-server'] }
-" " let g:ale_fixers = { 'python': ['black', 'isort'], 'javascript': ['prettier'], 'c': ['clang-format'], 'go': ['goimports'], 'rust': ['rustfmt'] }
-let g:ale_fixers = { 'python': ['black', 'isort'], 'go': ['gofmt'] }
-let g:ale_fix_on_save = 1
-" let g:ale_hover_to_preview = 1
 
 " Better display for messages
 set cmdheight=2
@@ -255,7 +251,7 @@ augroup LuaHighlight
   autocmd TextYankPost * silent! lua require'vim.highlight'.on_yank()
 augroup END
 
-autocmd BufEnter * lua require'completion'.on_attach()
+" autocmd BufEnter * lua require'completion'.on_attach()
 
 " lua require('lsp')
 "
