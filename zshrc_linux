@@ -3,10 +3,6 @@ bashcompinit
 export ZSH="/home/domluna/.oh-my-zsh"
 ZSH_THEME="robbyrussell"
 
-export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
-export MANPATH="/home/linuxbrew/.linuxbrew/share/man:$MANPATH"
-export INFOPATH="/home/linuxbrew/.linuxbrew/share/info:$INFOPATH"
-
 plugins=(git tmux fd)
 source $ZSH/oh-my-zsh.sh
 
