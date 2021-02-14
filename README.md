@@ -5,8 +5,8 @@ things to install:
 * tmux
 * neovim
 * fzf (via fzf.vim)
-* starship (?)
 * tmux plugins https://github.com/tmux-plugins/tpm
+* zi (jump to dirs)
 
 For colors
 
