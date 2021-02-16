@@ -7,4 +7,4 @@ colorscheme!("GruvboxDark")
 catch
 end
 
-# using Revise
+using Revise
