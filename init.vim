@@ -3,6 +3,7 @@ call plug#begin('~/.local/share/nvim/plugged')
 Plug 'sheerun/vim-polyglot'
 Plug 'uarun/vim-protobuf'
 Plug 'lifepillar/pgsql.vim'
+Plug 'JuliaEditorSupport/julia-vim'
 
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
@@ -25,10 +26,6 @@ Plug 'justinmk/vim-sneak'
 
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-
-" Plug 'neovim/nvim-lsp'
-" Plug 'nvim-lua/diagnostic-nvim'
-" Plug 'nvim-lua/completion-nvim'
 
 Plug 'DanilaMihailov/beacon.nvim'
 
@@ -165,6 +162,7 @@ map <silent><Leader>r :RG<CR>
 " imap <c-x><c-k> <plug>(fzf-complete-word)
 " imap <c-x><c-f> <plug>(fzf-complete-path)
 " imap <c-x><c-l> <plug>(fzf-complete-line)
+inoremap <F10> ~
 
 " comment
 map <silent><Leader>c :TComment<CR>
@@ -213,13 +211,6 @@ endif
 set autoread
 au FocusGained * silent! :checktime
 
-lua require("navigation")
-" map the Terminal function in the lua module to some shortcuts
-" nnoremap <silent> <leader>kh :lua Terminal(1)<cr>
-" nnoremap <silent> <leader>kj :lua Terminal(2)<cr>
-" nnoremap <silent> <leader>kk :lua Terminal(3)<cr>
-" nnoremap <silent> <leader>kl :lua Terminal(4)<cr>
-
 " => resize splits when vim is resized
 autocmd VimResized * wincmd =
 
@@ -251,25 +242,3 @@ augroup LuaHighlight
   autocmd TextYankPost * silent! lua require'vim.highlight'.on_yank()
 augroup END
 
-" autocmd BufEnter * lua require'completion'.on_attach()
-
-" lua require('lsp')
-"
-" let g:diagnostic_auto_popup_while_jump = 0
-" let g:diagnostic_enable_virtual_text = 0
-" let g:diagnostic_enable_underline = 0
-" let g:completion_timer_cycle = 200 "default value is 80
-
-lua require'colorizer'.setup()
-
-" JuliaFormatter
-" let g:JuliaFormatter_options = {
-"         \ 'indent'                    : 4,
-"         \ 'margin'                    : 92,
-"         \ 'always_for_in'             : v:true,
-"         \ 'whitespace_ops_in_indices' : v:false,
-"         \ 'remove_extra_newlines' : v:true,
-"         \ }
-
-" Automatic formatting for Julia files
-" autocmd FileType julia nnoremap <buffer> <c-f> :JuliaFormatterFormat<cr>

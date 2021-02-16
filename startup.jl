@@ -1,5 +1,5 @@
 push!(LOAD_PATH, "$(homedir())/.julia/dev")
-push!(LOAD_PATH, "$(homedir())/work")
+push!(LOAD_PATH, "$(homedir())/work/ocean/mirage")
 
 using OhMyREPL
 try
