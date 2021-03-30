@@ -3,10 +3,14 @@ bashcompinit
 export ZSH="/home/domluna/.oh-my-zsh"
 ZSH_THEME="robbyrussell"
 
+export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
+export MANPATH="/home/linuxbrew/.linuxbrew/share/man:$MANPATH"
+export INFOPATH="/home/linuxbrew/.linuxbrew/share/info:$INFOPATH"
+
 plugins=(git tmux fd)
 source $ZSH/oh-my-zsh.sh
 
-export PATH="$PATH:$HOME/julia/usr/bin"
+export PATH="$PATH:$HOME/julia-1.6.0/bin"
 export PATH="$PATH:/usr/local/cuda/bin"
 export PATH="$PATH:$HOME/.fzf/bin"
 
@@ -46,8 +50,6 @@ tm() {
 eval "$(zoxide init zsh)"
 eval "$(hub alias -s)"
 
-export PATH="/home/domluna/conda/bin:$PATH"  # commented out by conda initialize
-
 if [ -f "$HOME/.tokens" ]; then
     source $HOME/.tokens
 fi
@@ -75,10 +77,6 @@ if [ -e /home/domluna/.nix-profile/etc/profile.d/nix.sh ]; then . /home/domluna/
 setopt inc_append_history
 # Reloads the history whenever you use it
 setopt share_history
-
-# create pipenv in project
-export PIPENV_VENV_IN_PROJECT=1
-export PATH="/home/domluna/.poetry/bin:$PATH"
 
 # easy place to put manually downloaded binaries
 export PATH="/home/domluna/bin:$PATH"
