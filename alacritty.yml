@@ -3,9 +3,9 @@
 # Any items in the `env` entry below will be added as
 # environment variables. Some entries may override variables
 # set by alacritty itself.
-env:
-  # TERM variable
-  TERM: alacritty
+# env:
+#   # TERM variable
+#   TERM: alacritty
   #
   # This value is used to set the `$TERM` environment variable for
   # each instance of Alacritty. If it is not present, alacritty will
@@ -129,28 +129,10 @@ draw_bold_text_with_bright_colors: true
 #
 colors:
   primary:
-    background: '#222222'
-    foreground: '#F1F1F1'
-
-  normal:
-    black: '#222222'
-    red: '#E32791'
-    green: '#5FD7A7'
-    yellow: '#F3E430'
-    blue: '#B6D6FD'
-    magenta: '#6855DE'
-    cyan: '#4FB8CC'
-    white: '#F1F1F1'
-
-  bright:
-    black: '#222222'
-    red: '#E32791'
-    green: '#5FD7A7'
-    yellow: '#F3E430'
-    blue: '#B6D6FD'
-    magenta: '#6855DE'
-    cyan: '#4FB8CC'
-    white: '#F1F1F1'
+    # background: '#222222'
+    # foreground: '#F1F1F1'
+    background: '#0e0e0e'
+    foreground: '#eeeeee'
 
 # Visual Bell
 #

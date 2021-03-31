@@ -11,10 +11,8 @@ export PATH=/usr/local/anaconda3/bin:$PATH
 # Go
 export PATH="/usr/local/opt/openssl/bin:$PATH"
 export PATH=$PATH:$HOME/go/bin
-export PATH=$PATH:$HOME/ocean/backend/bin
 export PATH=$PATH:$HOME/bin
 export PATH=$PATH:$HOME/julia/usr/bin
-export PATH=$PATH:$HOME/.gem/ruby/2.3.0/bin
 export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin
 
 export EDITOR=nvim
@@ -47,16 +45,13 @@ tm() {
  session=$(tmux list-sessions -F "#{session_name}" 2>/dev/null | fzf --exit-0) &&  tmux $change -t "$session" || echo "No sessions found."
 }
 
-
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-eval "$(jump shell)"
-eval "$(direnv hook zsh)"
+eval "$(zoxide init zsh)"
+eval "$(hub alias -s)"
 
-export ANDROID_SDK=$HOME/Library/Android/sdk
-export PATH=$PATH:$ANDROID_SDK/emulator
-export PATH=$PATH:$ANDROID_SDK/tools
-export PATH=$PATH:$ANDROID_SDK/tools/bin
-export PATH=$PATH:$ANDROID_SDK/platform-tools
+# Appends every command to the history file once it is executed
+setopt inc_append_history
+# Reloads the history whenever you use it
+setopt share_history
 
-export GO111MODULE=on
