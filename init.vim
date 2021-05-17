@@ -1,8 +1,5 @@
 call plug#begin('~/.local/share/nvim/plugged')
 
-Plug 'sheerun/vim-polyglot'
-Plug 'uarun/vim-protobuf'
-Plug 'lifepillar/pgsql.vim'
 Plug 'JuliaEditorSupport/julia-vim'
 
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -17,9 +14,6 @@ Plug 'godlygeek/tabular'
 Plug 'norcalli/nvim-colorizer.lua'
 Plug 'junegunn/rainbow_parentheses.vim'
 
-Plug 'kdheepak/JuliaFormatter.vim'
-" Plug 'plasticboy/vim-markdown'
-"
 Plug 'airblade/vim-rooter'
 
 Plug 'justinmk/vim-sneak'
@@ -32,6 +26,8 @@ Plug 'DanilaMihailov/beacon.nvim'
 Plug 'lifepillar/vim-gruvbox8'
 
 " Plug 'hrsh7th/nvim-compe'
+"
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
 call plug#end()
 
@@ -270,4 +266,19 @@ set completeopt=menuone,noselect
 " inoremap <silent><expr> <C-e>     compe#close('<C-e>')
 " inoremap <silent><expr> <C-f>     compe#scroll({ 'delta': +4 })
 " inoremap <silent><expr> <C-d>     compe#scroll({ 'delta': -4 })
-"
+
+lua <<EOF
+require'nvim-treesitter.configs'.setup {
+  ensure_installed = "maintained", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
+  --ignore_installed = {"julia"},
+  highlight = {
+    enable = true,              -- false will disable the whole extension
+  },
+  indent = {
+    enable = true,              -- false will disable the whole extension
+  },
+}
+EOF
+
+" set foldmethod=expr
+" set foldexpr=nvim_treesitter#foldexpr()

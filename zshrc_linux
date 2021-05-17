@@ -30,66 +30,68 @@ alias gc='git commit'
 alias md='mkdir -p'
 alias py='ipython'
 
-export FZF_DEFAULT_OPTS='--height 96% --reverse --inline-info'
-export FZF_DEFAULT_COMMAND="fd --type f --hidden --follow --exclude '{.git,.mypy_cache,node_modules,vendor}/'"
-# export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS' --color=fg:#ff0000,bg:-1,hl:#000000 --color=fg+:#ffffff,bg+:#000000,hl+:#ffffff --color=info:#000000,prompt:#000000,pointer:#ffffff --color=marker:#ffffff,spinner:#000000,header:#000000'
-
-bindkey -s '\C-p' 'nvim $(fzf)\n'
-
-tm() {
- [[ -n "$TMUX" ]] && change="switch-client" || change="attach-session"
- if [ $1 ]; then
-    tmux $change -t "$1" 2>/dev/null || (tmux new-session -d -s $1 && tmux $change -t "$1"); return
- fi
- session=$(tmux list-sessions -F "#{session_name}" 2>/dev/null | fzf --exit-0) &&  tmux $change -t "$session" || echo "No sessions found."
-}
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-eval "$(zoxide init zsh)"
-eval "$(hub alias -s)"
-
-if [ -f "$HOME/.tokens" ]; then
-    source $HOME/.tokens
-fi
-
-export CUDA_DIR=/usr/local/cuda
-export LD_LIBRARY_PATH=$CUDA_DIR/lib64
-export PATH="$PATH:$CUDA_DIR/bin"
-
-# julia
-export JULIA_REVISE_INCLUDE=1
-export JULIA_NUM_THREADS=4
-export JULIA_STACKTRACE_MINIMAL=true
-
-export DUMP1=/media/domluna/c2ad5753-ddfb-460f-af6d-c708af9b0874
-# /mnt/c2ad5753-ddfb-460f-af6d-c708af9b0874
+# export FZF_DEFAULT_OPTS='--height 96% --reverse --inline-info'
+# export FZF_DEFAULT_COMMAND="fd --type f --hidden --follow --exclude '{.git,.mypy_cache,node_modules,vendor}/'"
+# # export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS' --color=fg:#ff0000,bg:-1,hl:#000000 --color=fg+:#ffffff,bg+:#000000,hl+:#ffffff --color=info:#000000,prompt:#000000,pointer:#ffffff --color=marker:#ffffff,spinner:#000000,header:#000000'
 #
-# ln -s /mnt/c2ad5753-ddfb-460f-af6d-c708af9b0874 $HOME/mount1
+# bindkey -s '\C-p' 'nvim $(fzf)\n'
+#
+# tm() {
+#  [[ -n "$TMUX" ]] && change="switch-client" || change="attach-session"
+#  if [ $1 ]; then
+#     tmux $change -t "$1" 2>/dev/null || (tmux new-session -d -s $1 && tmux $change -t "$1"); return
+#  fi
+#  session=$(tmux list-sessions -F "#{session_name}" 2>/dev/null | fzf --exit-0) &&  tmux $change -t "$session" || echo "No sessions found."
+# }
+#
+# [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+#
+# eval "$(zoxide init zsh)"
+# eval "$(hub alias -s)"
 
-export PKG_CONFIG_PATH=/usr/lib/x86_64-linux-gnu/pkgconfig:/usr/share/pkgconfig:$PKG_CONFIG_PATH
-
-export GO111MODULE=on
-export PATH="/home/domluna/go/bin:$PATH"
-
-export PATH="/home/domluna/.deno/bin:$PATH"
-
-if [ -e /home/domluna/.nix-profile/etc/profile.d/nix.sh ]; then . /home/domluna/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
-
-# Appends every command to the history file once it is executed
-setopt inc_append_history
-# Reloads the history whenever you use it
-setopt share_history
-
-# easy place to put manually downloaded binaries
-export PATH="/home/domluna/bin:$PATH"
+# if [ -f "$HOME/.tokens" ]; then
+#     source $HOME/.tokens
+# fi
+#
+# export CUDA_DIR=/usr/local/cuda
+# export LD_LIBRARY_PATH=$CUDA_DIR/lib64
+# export PATH="$PATH:$CUDA_DIR/bin"
+#
+# # julia
+# export JULIA_REVISE_INCLUDE=1
+# export JULIA_NUM_THREADS=4
+# export JULIA_STACKTRACE_MINIMAL=true
+#
+# export DUMP1=/media/domluna/c2ad5753-ddfb-460f-af6d-c708af9b0874
+# # /mnt/c2ad5753-ddfb-460f-af6d-c708af9b0874
+# #
+# # ln -s /mnt/c2ad5753-ddfb-460f-af6d-c708af9b0874 $HOME/mount1
+#
+# export PKG_CONFIG_PATH=/usr/lib/x86_64-linux-gnu/pkgconfig:/usr/share/pkgconfig:$PKG_CONFIG_PATH
+#
+# export GO111MODULE=on
+# export PATH="/home/domluna/go/bin:$PATH"
+#
+# export PATH="/home/domluna/.deno/bin:$PATH"
+#
+# if [ -e /home/domluna/.nix-profile/etc/profile.d/nix.sh ]; then . /home/domluna/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
+#
+# # Appends every command to the history file once it is executed
+# setopt inc_append_history
+# # Reloads the history whenever you use it
+# setopt share_history
+#
+# # easy place to put manually downloaded binaries
+# export PATH="/home/domluna/bin:$PATH"
 
 #
-# Custom functions ???
+# Custom functions
 #
 
-function checkout-branch() {
-   git branch | grep --invert-match '\*' | cut -c 3- |
-      fzf --multi --preview="git log {}" |
-      xargs --no-run-if-empty git checkout
-}
+# function checkout-branch() {
+#    git branch | grep --invert-match '\*' | cut -c 3- |
+#       fzf --multi --preview="git log {}" |
+#       xargs --no-run-if-empty git checkout
+# }
+
+# export PATH="$HOME/.poetry/bin:$PATH"
