@@ -26,7 +26,7 @@ Plug 'DanilaMihailov/beacon.nvim'
 Plug 'lifepillar/vim-gruvbox8'
 
 " Plug 'hrsh7th/nvim-compe'
-"
+
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
 call plug#end()
