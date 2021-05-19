@@ -5,7 +5,6 @@ push!(LOAD_PATH, "$(homedir())/dev/ml-projects")
 
 try
     using OhMyREPL
-    colorscheme!("GruvboxDark")
     using Revise
 catch
     @warn "something is not installed"

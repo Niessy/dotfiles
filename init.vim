@@ -1,5 +1,6 @@
 call plug#begin('~/.local/share/nvim/plugged')
 
+Plug 'sheerun/vim-polyglot'
 Plug 'JuliaEditorSupport/julia-vim'
 
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -27,7 +28,7 @@ Plug 'lifepillar/vim-gruvbox8'
 
 " Plug 'hrsh7th/nvim-compe'
 
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+" Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
 call plug#end()
 
@@ -44,14 +45,8 @@ let g:rainbow#max_level = 16
 let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['{', '}']]
 autocmd FileType * RainbowParentheses
 
-" set termguicolors
-" highlight Normal guibg=none guifg=none
-
-" set background=light
 set background=dark
 colorscheme gruvbox8
-
-" set relativenumber
 
 " Better display for messages
 set cmdheight=2
@@ -175,17 +170,18 @@ nnoremap <silent> <c-j> :call TmuxMove('j')<cr>
 nnoremap <silent> <c-k> :call TmuxMove('k')<cr>
 nnoremap <silent> <c-l> :call TmuxMove('l')<cr>
 
-autocmd Filetype csharp setlocal ts=4 sw=4 sts=0 expandtab
-autocmd Filetype julia setlocal ts=4 sw=4 sts=0 expandtab
-autocmd Filetype javascript setlocal ts=2 sw=2 sts=0 expandtab
-autocmd Filetype markdown setlocal ts=2 sw=2 sts=0 expandtab
-autocmd Filetype vimscript setlocal ts=2 sw=2 sts=0 expandtab
-autocmd Filetype json setlocal ts=2 sw=2 sts=0 expandtab
-autocmd Filetype vimscript setlocal ts=4 sw=4 sts=0 expandtab
-autocmd Filetype yaml setlocal ts=2 sw=2 sts=0 expandtab
-autocmd Filetype css setlocal ts=2 sw=2 sts=0 expandtab
-autocmd Filetype scss setlocal ts=2 sw=2 sts=0 expandtab
-autocmd Filetype sql setlocal ts=2 sw=2 sts=0 expandtab
+" autocmd Filetype csharp setlocal ts=4 sw=4 sts=0 expandtab
+" autocmd Filetype julia setlocal ts=4 sw=4 sts=0 expandtab
+" autocmd Filetype javascript setlocal ts=2 sw=2 sts=0 expandtab
+" autocmd Filetype markdown setlocal ts=2 sw=2 sts=0 expandtab
+" autocmd Filetype vimscript setlocal ts=2 sw=2 sts=0 expandtab
+" autocmd Filetype json setlocal ts=2 sw=2 sts=0 expandtab
+" autocmd Filetype vimscript setlocal ts=4 sw=4 sts=0 expandtab
+" autocmd Filetype yaml setlocal ts=2 sw=2 sts=0 expandtab
+" autocmd Filetype css setlocal ts=2 sw=2 sts=0 expandtab
+" autocmd Filetype scss setlocal ts=2 sw=2 sts=0 expandtab
+" autocmd Filetype sql setlocal ts=2 sw=2 sts=0 expandtab
+autocmd Filetype go setlocal ts=8 sw=8 sts=0 expandtab
 
 if has('persistent_undo')
   " define a path to store persistent undo files.
@@ -267,18 +263,18 @@ set completeopt=menuone,noselect
 " inoremap <silent><expr> <C-f>     compe#scroll({ 'delta': +4 })
 " inoremap <silent><expr> <C-d>     compe#scroll({ 'delta': -4 })
 
-lua <<EOF
-require'nvim-treesitter.configs'.setup {
-  ensure_installed = "maintained", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
-  --ignore_installed = {"julia"},
-  highlight = {
-    enable = true,              -- false will disable the whole extension
-  },
-  indent = {
-    enable = true,              -- false will disable the whole extension
-  },
-}
-EOF
+" lua <<EOF
+" require'nvim-treesitter.configs'.setup {
+"   ensure_installed = "maintained", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
+"   --ignore_installed = {"julia"},
+"   highlight = {
+"     enable = true,              -- false will disable the whole extension
+"   },
+"   indent = {
+"     enable = true,              -- false will disable the whole extension
+"   },
+" }
+" EOF
 
 " set foldmethod=expr
 " set foldexpr=nvim_treesitter#foldexpr()
