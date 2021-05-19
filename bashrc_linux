@@ -7,6 +7,10 @@ export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
 export MANPATH="/home/linuxbrew/.linuxbrew/share/man:$MANPATH"
 export INFOPATH="/home/linuxbrew/.linuxbrew/share/info:$INFOPATH"
 
+if [ -f "$HOME/.tokens" ]; then
+  source $HOME/.tokens
+fi
+
 export CUDA_DIR=/usr/local/cuda
 export LD_LIBRARY_PATH=$CUDA_DIR/lib64
 export PATH="$PATH:$CUDA_DIR/bin"
@@ -16,12 +20,14 @@ export JULIA_REVISE_INCLUDE=1
 export JULIA_NUM_THREADS=4
 export JULIA_STACKTRACE_MINIMAL=true
 
+export PATH="$PATH:$HOME/julia-1.6/bin"
+export PATH="$PATH:$HOME/.fzf/bin"
+
 export EDITOR=nvim
 
 alias j='julia'
 alias ls='exa'
 alias tree='ls --tree'
-alias cat='bat'
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
@@ -49,12 +55,9 @@ tm() {
  session=$(tmux list-sessions -F "#{session_name}" 2>/dev/null | fzf --exit-0) &&  tmux $change -t "$session" || echo "No sessions found."
 }
 
-
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 eval "$(zoxide init zsh)"
 eval "$(hub alias -s)"
-
-export PATH="/home/domluna/anaconda3/bin:$PATH"
 
 # Avoid duplicates
 HISTCONTROL=ignoredups:erasedups
