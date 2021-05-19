@@ -1,15 +1,9 @@
-things to install:
+Things to install:
 
-* alacritty
-* exa
+* terminal or kitty
 * tmux
 * neovim
+* exa (ls replacement)
 * fzf (via fzf.vim)
 * tmux plugins https://github.com/tmux-plugins/tpm
-* zi (jump to dirs)
-
-For colors
-
-# setup terminfo
-sudo tic -xe alacritty,alacritty-direct alacritty.info
-https://github.com/alacritty/alacritty/blob/master/extra/alacritty.info
+* zoxide (jump to dirs)
