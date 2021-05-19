@@ -94,6 +94,14 @@ function checkout-branch() {
       xargs --no-run-if-empty git checkout
 }
 
-function pypath() {
- export PYTHONPATH=$PWD:$PYTHONPATH
+function setpypath() {
+  export PYTHONPATH=$PWD:$PYTHONPATH
+}
+
+function ltheme() {
+  kitty @ set-colors -a "/home/domluna/.config/kitty/kitty-themes/themes/AtomOneLight.conf"
+}
+
+function dtheme() {
+  kitty @ set-colors -a "/home/domluna/.config/kitty/kitty-themes/themes/Atom.conf"
 }
