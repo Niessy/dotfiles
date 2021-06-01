@@ -295,5 +295,13 @@ set completeopt=menuone,noselect
 " set foldexpr=nvim_treesitter#foldexpr()
 
 
+lua << EOF
+local nvim_lsp = require('lspconfig')
 
-lua require'lspconfig'.gopls.setup{}
+-- Use a loop to conveniently call 'setup' on multiple servers and
+-- map buffer local keybindings when the language server attaches
+local servers = { "pyright", "gopls", "tsserver" }
+for _, lsp in ipairs(servers) do
+  nvim_lsp[lsp].setup {}
+end
+EOF
