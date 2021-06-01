@@ -9,9 +9,10 @@ if [ -f "$HOME/.tokens" ]; then
   source $HOME/.tokens
 fi
 
-export CUDA_DIR=/usr/local/cuda
-export LD_LIBRARY_PATH=$CUDA_DIR/lib64
-export PATH="$PATH:$CUDA_DIR/bin"
+# CUDA
+# export CUDA_DIR=/usr/local/cuda
+# export LD_LIBRARY_PATH=$CUDA_DIR/lib64
+# export PATH="$PATH:$CUDA_DIR/bin"
 
 # julia
 export JULIA_REVISE_INCLUDE=1
@@ -54,7 +55,7 @@ tm() {
 }
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
-eval "$(zoxide init zsh)"
+eval "$(zoxide init bash)"
 eval "$(hub alias -s)"
 
 # Avoid duplicates
@@ -104,3 +105,11 @@ function dtheme() {
   # default theme is dark
   kitty @ set-colors -a "/home/domluna/.config/kitty/theme.conf"
 }
+
+complete -C /home/domluna/bin/terraform terraform
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/home/domluna/google-cloud-sdk/path.bash.inc' ]; then . '/home/domluna/google-cloud-sdk/path.bash.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/home/domluna/google-cloud-sdk/completion.bash.inc' ]; then . '/home/domluna/google-cloud-sdk/completion.bash.inc'; fi
