@@ -22,8 +22,6 @@ Plug 'vim-airline/vim-airline-themes'
 
 Plug 'DanilaMihailov/beacon.nvim'
 
-Plug 'lifepillar/vim-gruvbox8'
-
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-treesitter/playground'
 Plug 'neovim/nvim-lspconfig'
@@ -35,6 +33,8 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-fzy-native.nvim'
 Plug 'nvim-telescope/telescope-github.nvim'
+
+Plug 'RRethy/nvim-base16'
 
 call plug#end()
 
@@ -51,8 +51,9 @@ let g:rainbow#max_level = 16
 let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['{', '}']]
 autocmd FileType * RainbowParentheses
 
-set background=dark
-colorscheme gruvbox8
+"  All builtin colorschemes can be accessed with |:colorscheme|.
+lua vim.cmd('colorscheme base16-gruvbox-dark-soft')
+" lua vim.cmd('colorscheme base16-github')
 
 " Better display for messages
 set cmdheight=2
@@ -300,7 +301,7 @@ local nvim_lsp = require('lspconfig')
 
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
-local servers = { "pyright", "gopls", "tsserver" }
+local servers = { "pyright" }
 for _, lsp in ipairs(servers) do
   nvim_lsp[lsp].setup {}
 end

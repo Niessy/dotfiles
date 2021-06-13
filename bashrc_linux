@@ -1,6 +1,9 @@
 # cool stuff bucko
 export PS1="λ \W: "
 
+export HISTSIZE=10000
+export HISEFILESIZE=10000
+
 export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
 export MANPATH="/home/linuxbrew/.linuxbrew/share/man:$MANPATH"
 export INFOPATH="/home/linuxbrew/.linuxbrew/share/info:$INFOPATH"
@@ -10,13 +13,12 @@ if [ -f "$HOME/.tokens" ]; then
 fi
 
 # CUDA
-# export CUDA_DIR=/usr/local/cuda
-# export LD_LIBRARY_PATH=$CUDA_DIR/lib64
-# export PATH="$PATH:$CUDA_DIR/bin"
+export CUDA_DIR=/usr/local/cuda
+export LD_LIBRARY_PATH=$CUDA_DIR/lib64
+export PATH="$PATH:$CUDA_DIR/bin"
 
 # julia
 export JULIA_REVISE_INCLUDE=1
-export JULIA_NUM_THREADS=4
 export JULIA_STACKTRACE_MINIMAL=true
 
 export PATH="$PATH:$HOME/julia-1.6/bin"
@@ -91,19 +93,6 @@ function checkout-branch() {
    git branch | grep --invert-match '\*' | cut -c 3- |
       fzf --multi --preview="git log {}" |
       xargs --no-run-if-empty git checkout
-}
-
-function setpypath() {
-  export PYTHONPATH=$PWD:$PYTHONPATH
-}
-
-function ltheme() {
-  kitty @ set-colors -a "/home/domluna/.config/kitty/kitty-themes/themes/AtomOneLight.conf"
-}
-
-function dtheme() {
-  # default theme is dark
-  kitty @ set-colors -a "/home/domluna/.config/kitty/theme.conf"
 }
 
 complete -C /home/domluna/bin/terraform terraform
