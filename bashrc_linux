@@ -12,11 +12,6 @@ if [ -f "$HOME/.tokens" ]; then
   source $HOME/.tokens
 fi
 
-# CUDA
-export CUDA_DIR=/usr/local/cuda
-export LD_LIBRARY_PATH=$CUDA_DIR/lib64
-export PATH="$PATH:$CUDA_DIR/bin"
-
 # julia
 export JULIA_REVISE_INCLUDE=1
 export JULIA_STACKTRACE_MINIMAL=true
@@ -27,7 +22,7 @@ export PATH="$PATH:$HOME/.fzf/bin"
 export EDITOR=nvim
 
 alias j='julia'
-alias ls='exa'
+alias jn='$HOME/julia/julia'
 alias tree='ls --tree'
 alias ..='cd ..'
 alias ...='cd ../..'
@@ -102,3 +97,6 @@ if [ -f '/home/domluna/google-cloud-sdk/path.bash.inc' ]; then . '/home/domluna/
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/home/domluna/google-cloud-sdk/completion.bash.inc' ]; then . '/home/domluna/google-cloud-sdk/completion.bash.inc'; fi
+. "$HOME/.cargo/env"
+
+export PATH="/home/domluna/.local/share/solana/install/active_release/bin:$PATH"

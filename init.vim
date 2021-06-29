@@ -1,6 +1,6 @@
 call plug#begin('~/.local/share/nvim/plugged')
 
-Plug 'sheerun/vim-polyglot'
+" Plug 'sheerun/vim-polyglot'
 Plug 'JuliaEditorSupport/julia-vim'
 
 Plug 'junegunn/vim-easy-align'
@@ -279,18 +279,18 @@ set completeopt=menuone,noselect
 " inoremap <silent><expr> <C-f>     compe#scroll({ 'delta': +4 })
 " inoremap <silent><expr> <C-d>     compe#scroll({ 'delta': -4 })
 
-" lua <<EOF
-" require'nvim-treesitter.configs'.setup {
-"   ensure_installed = "maintained", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
-"   --ignore_installed = {"julia"},
-"   highlight = {
-"     enable = true,              -- false will disable the whole extension
-"   },
-"   indent = {
-"     enable = true,              -- false will disable the whole extension
-"   },
-" }
-" EOF
+lua << EOF
+ require'nvim-treesitter.configs'.setup {
+   ensure_installed = "maintained", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
+   -- ignore_installed = {"julia"},
+   highlight = {
+     enable = true,              -- false will disable the whole extension
+   },
+   indent = {
+     enable = true,              -- false will disable the whole extension
+   },
+ }
+EOF
 
 " set foldmethod=expr
 " set foldexpr=nvim_treesitter#foldexpr()
@@ -306,3 +306,5 @@ for _, lsp in ipairs(servers) do
   nvim_lsp[lsp].setup {}
 end
 EOF
+
+
