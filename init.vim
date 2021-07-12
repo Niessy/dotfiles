@@ -1,49 +1,16 @@
-call plug#begin('~/.local/share/nvim/plugged')
+lua << EOF
+local execute = vim.api.nvim_command
+local fn = vim.fn
 
-" Plug 'sheerun/vim-polyglot'
-Plug 'JuliaEditorSupport/julia-vim'
+local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
 
-Plug 'junegunn/vim-easy-align'
-Plug 'tomtom/tcomment_vim'
+if fn.empty(fn.glob(install_path)) > 0 then
+  fn.system({'git', 'clone', 'https://github.com/wbthomason/packer.nvim', install_path})
+  execute 'packadd packer.nvim'
+end
+EOF
 
-Plug 'tpope/vim-fugitive'
-Plug 'junegunn/gv.vim'
-Plug 'godlygeek/tabular'
-
-Plug 'norcalli/nvim-colorizer.lua'
-Plug 'junegunn/rainbow_parentheses.vim'
-
-Plug 'airblade/vim-rooter'
-
-Plug 'justinmk/vim-sneak'
-
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-
-Plug 'DanilaMihailov/beacon.nvim'
-
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-Plug 'nvim-treesitter/playground'
-Plug 'neovim/nvim-lspconfig'
-Plug 'hrsh7th/nvim-compe'
-" dependencies
-Plug 'nvim-lua/popup.nvim'
-Plug 'nvim-lua/plenary.nvim'
-" telescope
-Plug 'nvim-telescope/telescope.nvim'
-Plug 'nvim-telescope/telescope-fzy-native.nvim'
-Plug 'nvim-telescope/telescope-github.nvim'
-
-Plug 'RRethy/nvim-base16'
-
-call plug#end()
-
-" Automatically install missing plugins on startup
-autocmd VimEnter *
-  \  if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
-  \|   PlugInstall --sync | q
-  \| endif
-
+lua require('plugins')
 
 let g:airline_theme='minimalist'
 
@@ -124,7 +91,7 @@ require('telescope').setup{
     entry_prefix = "  ",
     initial_mode = "insert",
     selection_strategy = "reset",
-    sorting_strategy = "descending",
+    sorting_strategy = "ascending",
     layout_strategy = "horizontal",
     layout_defaults = {
       horizontal = {
@@ -279,19 +246,19 @@ set completeopt=menuone,noselect
 " inoremap <silent><expr> <C-f>     compe#scroll({ 'delta': +4 })
 " inoremap <silent><expr> <C-d>     compe#scroll({ 'delta': -4 })
 
-lua << EOF
- require'nvim-treesitter.configs'.setup {
-   ensure_installed = "maintained", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
-   -- ignore_installed = {"julia"},
-   highlight = {
-     enable = true,              -- false will disable the whole extension
-   },
-   indent = {
-     enable = true,              -- false will disable the whole extension
-   },
- }
-EOF
-
+" lua << EOF
+"  require'nvim-treesitter.configs'.setup {
+"    ensure_installed = "maintained", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
+"    -- ignore_installed = {"julia"},
+"    highlight = {
+"      enable = true,              -- false will disable the whole extension
+"    },
+"    indent = {
+"      enable = true,              -- false will disable the whole extension
+"    },
+"  }
+" EOF
+"
 " set foldmethod=expr
 " set foldexpr=nvim_treesitter#foldexpr()
 

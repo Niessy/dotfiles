@@ -16,7 +16,7 @@ fi
 export JULIA_REVISE_INCLUDE=1
 export JULIA_STACKTRACE_MINIMAL=true
 
-export PATH="$PATH:$HOME/julia-1.6/bin"
+export PATH="$PATH:$HOME/julia-1.7.0/bin"
 export PATH="$PATH:$HOME/.fzf/bin"
 
 export EDITOR=nvim
