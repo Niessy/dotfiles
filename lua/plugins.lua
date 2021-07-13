@@ -12,7 +12,7 @@ use '9mm/vim-closer'
 
   -- You can specify multiple plugins in a single call
   -- use {'tjdevries/colorbuddy.vim', {'nvim-treesitter/nvim-treesitter', opt = true}}
--- use 'sheerun/vim-polyglot'
+use 'sheerun/vim-polyglot'
 use 'JuliaEditorSupport/julia-vim'
 
 use 'junegunn/vim-easy-align'
