@@ -47,6 +47,7 @@ use 'nvim-lua/plenary.nvim'
 use 'nvim-telescope/telescope.nvim'
 use 'nvim-telescope/telescope-fzy-native.nvim'
 use 'nvim-telescope/telescope-github.nvim'
+use 'nvim-telescope/telescope-packer.nvim'
 
 use 'RRethy/nvim-base16'
 
